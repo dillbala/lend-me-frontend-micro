@@ -35,7 +35,7 @@ class Welcome extends CI_Controller {
             $this->load->view('/template/footer');
         }
         else {
-            $data['title'] = 'Login Page';
+            $data['title'] = 'Login';
             $this->form_validation->set_rules('password', 'Password', 'required');
             $this->form_validation->set_rules('email', 'Email', 'required');
             if ($this->form_validation->run() === FALSE) {
@@ -71,7 +71,7 @@ class Welcome extends CI_Controller {
     public function signup()
     {
 
-        $data['title'] = 'Signup Page';
+        $data['title'] = 'Signup';
 
         $this->form_validation->set_rules('password','Password','required');
         $this->form_validation->set_rules('email','Email','required');

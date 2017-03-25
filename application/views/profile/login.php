@@ -1,4 +1,7 @@
-<h2><?php echo $title;?></h2>
+<div class="container"><h2 class="align-left "><?php echo $title;?></h2>
+
+    <br>
+
 <?php
 echo validation_errors();
 ?>
@@ -12,5 +15,9 @@ echo validation_errors();
 <?php if(!empty($error)){?>
 <div class="alert-danger"><?php echo $error;?></div>
 <?php }?>
-<button type="submit" class="btn btn-default">submit</button>
+<button type="submit" class="btn btn-default">submit</button>  <a type="submit" class="pull-right">Forgot Password</a>
+
 </form>
+    <hr>
+    <a class="btn btn-primary btn-small pull-left" href="<?php echo base_url().'welcome/signup'?>">Signup </a>
+</div>

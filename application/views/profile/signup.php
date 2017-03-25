@@ -1,4 +1,4 @@
-<h2><?php echo $title;?></h2>
+<h2><?php echo $title;?><a class="pull-right" href="<?php echo base_url().''?>">Login </a></h2>
 <?php
 echo validation_errors();
 ?>
@@ -25,7 +25,7 @@ echo validation_errors();
     }
 </script>
 <form id = "regForm" action="signup" method="post">
-<div class="form-inline">
+<div class="form-group">
     <label>First name</label>
     <input required type="text" class="form-control" name="firstName" value="<?php echo set_value('firstName');?>" placeholder="first name">
     <label>Middle Name</label>

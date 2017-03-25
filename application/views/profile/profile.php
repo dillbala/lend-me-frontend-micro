@@ -34,6 +34,14 @@
         }
 
     }
+    elseif ($this->session->userdata['status']==3)
+    {
+        ?>
+        <h1> Hi <?php echo $this->session->userdata['firstName'];?></h1>
+        <p>Your account has been disabled by supervisor. Please contact him for further actions.</p>
+        <?php
+
+    }
     else
     {
 

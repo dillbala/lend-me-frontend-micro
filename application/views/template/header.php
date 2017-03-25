@@ -11,8 +11,54 @@
     <div class="container">
         <div id="navbar">
             <ul class="nav navbar-nav">
-                <li><a href="<?php echo base_url().'welcome/signup'?>">Signup </a></li>
-                <li><a href="<?php echo base_url().'welcome/logout'?>">Logout</a></li>
+
+                <?php
+                if (array_key_exists('logged_in',$this->session->userdata))
+                {
+                    if($this->session->userdata['status']==1) {
+                        ?>
+                        <li><a class="" href="<?php echo base_url() . '' ?>">Profile</a></li>
+                        <?php
+                        if ($this->session->userdata['role'] == 3) {
+
+                            ?>
+
+                            <li><a class="" href="<?php echo base_url() . 'instructor/' ?>">Instructors</a></li>
+                            <li><a class="" href="#">Classes</a></li>
+                            <!--                        <li><a class="" href="--><?php //echo base_url().'Classes/'
+                            ?><!--">Classes</a></li>-->
+                            <?php
+                        } else if ($this->session->userdata['role'] == 2) {
+                            ?>
+                            <li><a class="" href="#">Class requests</a></li>
+                            <li><a class="" href="#">My Calendar</a></li>
+
+                            <?php
+                        } else if ($this->session->userdata['role'] == 0 || $this->session->userdata['role'] == 1) {
+                            ?>
+                            <li><a class="" href="<?php echo base_url() . 'instructor/' ?>">Instructors</a></li>
+                            <?php
+                        }
+                        ?>
+
+                        <li><a class="navbar-right" href="<?php echo base_url() . 'welcome/logout' ?>">Logout</a></li>
+                        <?php
+
+                    }
+                    else{
+                        ?>
+                        <li><a class="navbar-right" href="<?php echo base_url() . 'welcome/logout' ?>">Logout</a></li>
+                        <?php
+                    }
+                }
+                else{
+                    ?>
+                        <h2>Welcome to Mentor</h2>
+                    <?php
+
+                }
+                ?>
+
 
             </ul>
         </div>

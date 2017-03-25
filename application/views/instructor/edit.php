@@ -2,7 +2,7 @@
 <?php
 echo validation_errors();
 ?>
-<?php echo form_open('employee/update');?>
+<?php echo form_open('instructor/update');?>
 <input type="hidden" name="id" value="<?php echo $employee['id'];?>">
 <div class="form-inline">
     <label>name</label>
