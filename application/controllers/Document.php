@@ -2,7 +2,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Student extends MY_Controller {
+class Document extends MY_Controller {
 
     /**
      * Index Page for this controller.
@@ -22,7 +22,7 @@ class Student extends MY_Controller {
      */
 
 
-    public function documents($user_id)
+    public function index($user_id)
     {
         $data['title'] = 'Documents';
         $response= $this->service_model->getData('/v1/documents/'.$user_id);
@@ -43,10 +43,10 @@ class Student extends MY_Controller {
 
     }
 
-
-    public function logout() {
-        $this->session->unset_userdata('userData');
-        $this->session->sess_destroy();
-        redirect('/');
+    public function view($location)
+    {
+        print_r($this->service_model->getFile('/v1/static/'.$location));
     }
+
+
 }

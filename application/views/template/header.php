@@ -25,6 +25,8 @@
 
                             <li><a class="" href="<?php echo base_url() . 'instructor/' ?>">Instructors</a></li>
                             <li><a class="" href="#">Classes</a></li>
+                            <li><a class="" href="<?php echo base_url() . 'document/index/'.$this->session->userdata['userId'] ?>">Documents</a></li>
+
                             <!--                        <li><a class="" href="--><?php //echo base_url().'Classes/'
                             ?><!--">Classes</a></li>-->
                             <?php

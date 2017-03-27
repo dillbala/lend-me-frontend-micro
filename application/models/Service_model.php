@@ -5,8 +5,8 @@ class Service_model extends CI_Model
 {
 
 
-    private $apiServer = 'http://54.254.209.255/mentor';
-//    private $apiServer = 'http://127.0.0.1:5000';
+//    private $apiServer = 'http://54.254.209.255/mentor';
+    public $apiServer = 'http://127.0.0.1:5000';
 
     function __construct() {
         parent::__construct();
@@ -14,6 +14,51 @@ class Service_model extends CI_Model
     }
 
 
+
+    public function getFile($url)
+    {
+        $ch = curl_init();
+
+// set URL and other appropriate options
+        curl_setopt($ch, CURLOPT_URL, $this->apiServer.$url);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+
+// grab URL and pass it to the browser
+        curl_exec($ch);
+
+// close cURL resource, and free up system resources
+        curl_close($ch);
+    }
+    public function fileData($url,$data)
+    {
+//        $post = array('type' => $data['type'],'user_id'=>$data['user_id'],'file'=>'@'.$data['path']);
+        $post = array('type' => $data['type'],'user_id'=>$data['user_id'],'file'=>new CurlFile($data['path']));
+
+
+        $ch = curl_init();
+        $headers = array();
+        if (!empty($this->session->userdata['token']))
+        {
+            array_push($headers,'token: '.$this->session->userdata['token']);
+        }
+
+
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers
+        );
+        curl_setopt($ch, CURLOPT_URL,$this->apiServer.$url);
+        curl_setopt($ch, CURLOPT_POST,1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+        $result=curl_exec ($ch);
+        $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        // Free up the resources $curl is using
+        curl_close($ch);
+
+        $data['result'] = json_decode($result,true);
+        $data['code'] = $httpcode;
+
+        return $data;
+    }
     public function deleteData($url)
     {
         $curl = curl_init($this->apiServer.$url);
