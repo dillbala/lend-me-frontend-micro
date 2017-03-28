@@ -11,8 +11,20 @@
 <!--        <br>-->
 <!--        <label>type</label>-->
 <!--        <small class="post-date">--><?php //echo $document['type']?><!--</small>-->
+        <?php if ($document['type']==2){
+            ?>
+            <label>Type of Document: </label>
+            <strong class="">NOC</strong>
+            <?php
+        }
+        else{
+            ?>
+            <label>Type of Document: </label>
+            <strong class="">User Uploaded</strong>
+            <?php
+        }?>
         <br>
-        <a class="btn btn-primary btn-small" href="<?php echo $this->service_model->apiServer.'/v1/static/'.$document['location']; ?>">Download </a>
+        <a target="_blank" class="btn btn-primary btn-small" href="<?php echo $this->service_model->apiServer.'/v1/static/'.$document['location']; ?>">Download </a>
     </div>
     <hr>
 <?php endforeach;?>

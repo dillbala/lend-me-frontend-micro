@@ -39,6 +39,7 @@
                         } else if ($this->session->userdata['role'] == 0 || $this->session->userdata['role'] == 1) {
                             ?>
                             <li><a class="" href="<?php echo base_url() . 'instructor/' ?>">Instructors</a></li>
+                            <li><a class="" href="<?php echo base_url() . 'student/noc' ?>">Students Without Noc</a></li>
                             <?php
                         }
                         ?>

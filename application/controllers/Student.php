@@ -44,6 +44,34 @@ class Student extends MY_Controller {
     }
 
 
+    public function noc()
+    {
+        $response= $this->service_model->getData('/v1/students/?role=3&noc=0');
+        $this->load->view('/template/header');
+        if ($response['code']==200)
+        {
+            $data['students'] = $response['result']['data'];
+
+            $this->load->view('/students/noc',$data);
+
+        }
+        else{
+            $data['error'] = $response['result']['message'];
+            $this->load->view('/students/noc',$data);
+        }
+        $this->load->view('/template/footer');
+    }
+
+    public function view($user_id)
+    {
+        $response= $this->service_model->getData('/v1/users/'.$user_id);
+        $data = $response['result']['data'];
+        $data['documents'] = $this->service_model->getData('/v1/documents/'.$user_id)['result']['data'];
+        $this->load->view('/template/header');
+        $this->load->view('/students/view',$data);
+    }
+
+
     public function logout() {
         $this->session->unset_userdata('userData');
         $this->session->sess_destroy();

@@ -11,6 +11,13 @@ class Upload extends MY_Controller{
         $this->load->view('/template/footer');
     }
 
+    public function noc($user_id,$name)
+    {
+
+        $this->load->view('/template/header');
+        $this->load->view('/uploads/index',array('error' => ' ','user_id'=>$user_id,'name'=>$name));
+        $this->load->view('/template/footer');
+    }
     public function do_upload()
     {
         $config['upload_path']          = FCPATH.'uploads/';
@@ -24,8 +31,16 @@ class Upload extends MY_Controller{
 
         if ( ! $this->upload->do_upload('userfile'))
         {
-            $error = array('error' => $this->upload->display_errors(),'user_id'=>$this->input->post('user_id'));
+            $error = array('error' => $this->upload->display_errors(),
+                'user_id'=>$this->input->post('user_id')
 
+
+            );
+
+            if (!empty($this->input->post('name')))
+            {
+                $error['name'] = $this->input->post('name');
+            }
             $this->load->view('/template/header');
             $this->load->view('uploads/index', $error);
         }
@@ -48,7 +63,7 @@ class Upload extends MY_Controller{
             if ($response['code']==200)
             {
                 $data['documents'] = $response['result']['data'];
-                redirect('document/index/'.$user_id);
+                redirect('student/view/'.$user_id);
             }
             else{
                 $data['error'] = $response['result']['message'];
