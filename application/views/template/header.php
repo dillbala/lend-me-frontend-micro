@@ -24,7 +24,7 @@
                             ?>
 
                             <li><a class="" href="<?php echo base_url() . 'instructor/' ?>">Instructors</a></li>
-                            <li><a class="" href="#">Classes</a></li>
+                            <li><a class="" href="<?php echo base_url() . 'student/classes' ?>">Classes</a></li>
                             <li><a class="" href="<?php echo base_url() . 'document/index/'.$this->session->userdata['userId'] ?>">Documents</a></li>
 
                             <!--                        <li><a class="" href="--><?php //echo base_url().'Classes/'
@@ -32,8 +32,11 @@
                             <?php
                         } else if ($this->session->userdata['role'] == 2) {
                             ?>
-                            <li><a class="" href="#">Class requests</a></li>
-                            <li><a class="" href="#">My Calendar</a></li>
+                            <li><a class="" href="<?php echo base_url() . 'instructor/classes' ?>">Classes</a></li>
+                            <li><a class="" href="<?php echo base_url().'request/instructor/'.$this->session->userdata['userId'];
+                                ?>">Student requests</a></li>
+<!--                            <li><a class="" href="#">My Calendar</a></li>-->
+                            <li><a class="" href="<?php echo base_url() . 'instructor/calendar' ?>">Set calendar</a></li>
 
                             <?php
                         } else if ($this->session->userdata['role'] == 0 || $this->session->userdata['role'] == 1) {

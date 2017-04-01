@@ -58,5 +58,12 @@ class Instructor_model extends CI_Model
     }
 
 
+    public function addSlots()
+    {
+
+
+    }
+
+
 }
 

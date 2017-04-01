@@ -12,7 +12,23 @@
         <label>Email</label>
         <small class="post-date"><?php echo $instructor['email']?></small>
         <br>
-    <a class="btn btn-primary btn-small" href="<?php echo base_url(); ?>instructor/view/<?php echo $instructor['id']; ?>">View Details</a>
+        <a class="btn btn-primary btn-small" href="<?php echo base_url(); ?>instructor/view/<?php echo $instructor['id']; ?>">View Details</a>
+        <?php
+
+        if($this->session->userdata['role']==3&&$this->session->userdata['noc']==1)
+        {
+            ?>
+            <a class="btn btn-primary btn-small" href="<?php echo base_url().'instructor/request/'.$instructor['id']?>"> Send Request</a>
+        <?php
+        }
+
+
+
+
+
+
+            ?>
+
     </div>
     <hr>
 <?php endforeach;?>

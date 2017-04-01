@@ -4,6 +4,63 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Instructor extends MY_Controller{
 
 
+    public function timeDiff($time,$date)
+    {
+        $time = explode('-',$time)[0];
+        $date1=date_create($date);
+        $date2=date_create(date('Y-m-d'));
+        $diff=date_diff($date2,$date1);
+        $day = $diff->format("%R%a");
+        if ($day[0]=='+' && $day[1]!=0)
+        {
+            return true;
+        }
+        if ($day[0]=='+' && $day[1]==0)
+        {
+            $time = DateTime::createFromFormat('H:i a', $time)->getTimestamp();
+            $currentTime = time();
+            if (($time-$currentTime)/3600>0.5)
+            {
+                return true;
+            }
+
+
+        }
+        return false;
+    }
+
+
+    public function classes()
+    {
+        $user_id = $this->session->userdata['userId'];
+        $date = date('Y-m-d');
+        $lastDate = date('Y-m-d',strtotime("+7 day"));
+        $query = '';
+        $query.='&start_date='.$date.'&end_date='.$lastDate.'&instructor_id='.$user_id;
+
+        $classes= $this->service_model->getData('/v1/timeslots/?'.$query)['result']['data'];
+        $groupedClasses= array();
+        foreach ($classes as $class )
+        {
+            if (!array_key_exists($class['date'],$groupedClasses))
+            {
+                $groupedClasses[$class['date']] = array();
+            }
+            if($this->timeDiff($class['slot_id'],$class['date']))
+            {
+                $class['cancel']=1;
+            }
+            else{
+                $class['cancel']=0;
+            }
+            array_push($groupedClasses[$class['date']],$class);
+        }
+        $data['classes'] = $groupedClasses;
+        $this->load->view('/template/header');
+        $this->load->view('/instructor/classes',$data);
+        $this->load->view('/template/footer');
+    }
+
     public function index()
     {
         $data['title'] = 'Instructors';
@@ -124,6 +181,50 @@ class Instructor extends MY_Controller{
 
         }
 
+    }
+
+
+    public function request($instructor_id)
+    {
+        $user_id = $this->session->userdata['userId'];
+
+        $response = $this->service_model->postData(
+                                                    array(
+                                                        'userId' => $user_id,
+                                                        'instructorId' => $instructor_id,
+                                                        'type'=>'addRequest'
+                                                         ),
+                                                    '/v1/instructors/'
+
+                                                  );
+
+        $this->load->view('/template/header');
+        $this->load->view('/uploads/success',array('message'=>$response['result']['message']));
+        $this->load->view('/template/footer');
+
+    }
+
+    public function calendar()
+    {
+        $this->load->view('/template/header');
+        $this->load->view('/calendar/index');
+    }
+
+    public function addSlots()
+    {
+        $user_id = $this->session->userdata['userId'];
+        $response = $this->service_model->postData(
+            array(
+                'instructor_id' => $user_id,
+                'status_instructor' =>1,
+                'date'=>$this->input->post('date'),
+                'slot_id'=>$this->input->post('ids')
+            ),
+            '/v1/timeslots/'
+
+        );
+
+        echo $response['code'];
     }
 
 }
