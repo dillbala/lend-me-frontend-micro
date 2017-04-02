@@ -15,7 +15,7 @@
             <?php if ($dateClass['cancel']==1)
             {
                 ?>
-                <button value="cancel" class="btn btn-primary">Cancel</button>
+                <button onclick="postData(this.id)" id="<?php echo $dateClass['id'];?>" value="cancel" class="btn btn-primary">Cancel</button>
                 <?php
             }?>
             </div>
@@ -27,3 +27,15 @@
     <button class="btn btn-primary btn-small" onclick="" value="Submit">Submit</button>
 </div>
 
+<script>
+    function postData(id) {
+        console.log(id);
+        $.post("<?php echo base_url().'student/cancelClass/';?>"+id).done(function(resultData) {
+            alert(resultData);
+            window.location.href = '<?php echo base_url()."student/classes/"?>';
+            return false;
+        });
+
+    }
+
+</script>

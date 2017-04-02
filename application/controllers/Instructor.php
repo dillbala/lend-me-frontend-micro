@@ -61,6 +61,10 @@ class Instructor extends MY_Controller{
         $this->load->view('/template/footer');
     }
 
+    public function cancelClass($classId)
+    {
+        echo $this->service_model->putData(array('instructor_id'=>$this->session->userdata['userId']),'/v1/timeslots/'.$classId)['result']['message'];
+    }
     public function index()
     {
         $data['title'] = 'Instructors';

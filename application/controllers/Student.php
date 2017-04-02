@@ -36,6 +36,13 @@ class Student extends MY_Controller {
         }
         return false;
     }
+
+
+    public function cancelClass($classId)
+    {
+        echo $this->service_model->putData(array('student_id'=>$this->session->userdata['userId']),'/v1/timeslots/'.$classId)['result']['message'];
+    }
+
     public function classes()
     {
         $user_id = $this->session->userdata['userId'];

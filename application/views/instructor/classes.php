@@ -18,7 +18,8 @@
                                     <?php if ($dateClass['cancel']==1)
                                     {
                                         ?>
-                                        <button value="cancel" class="btn btn-primary">Cancel</button>
+                                        <button id = "<?php
+                                        echo $dateClass['id'];?>" onclick="postData(this.id)" value="cancel" class="btn btn-primary">Cancel</button>
                                         <?php
                                     }?>
                 <?php }?>
@@ -30,3 +31,15 @@
     <?php endforeach;?>
 </div>
 
+<script>
+    function postData(id) {
+        console.log(id);
+        $.post("<?php echo base_url().'instructor/cancelClass/';?>"+id).done(function(resultData) {
+            alert(resultData);
+                window.location.href = '<?php echo base_url()."instructor/classes/"?>';
+                return false;
+        });
+
+    }
+
+</script>
