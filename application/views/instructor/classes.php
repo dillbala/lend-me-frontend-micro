@@ -7,7 +7,7 @@
         <?php echo $date;?>
         <br>
         <?php foreach ($class as $dateClass):?>
-            <div>
+            <div class="table-bordered">
 
                 <?php if ($dateClass['status_instructor']==1){?>
                     <input readonly class="btn btn-neutral btn-small" id= "<?php echo $dateClass['id']?>" value="<?php echo $dateClass['slot_id']?>">
@@ -18,8 +18,23 @@
                                     <?php if ($dateClass['cancel']==1)
                                     {
                                         ?>
+
                                         <button id = "<?php
                                         echo $dateClass['id'];?>" onclick="postData(this.id)" value="cancel" class="btn btn-primary">Cancel</button>
+                                        <br>
+                                        <br>
+                                        <div class="container">
+                                        <div class="container">
+                                            <label>Student Name</label>
+                                            <?php
+                                            echo $dateClass['studentName'];?>
+                                        </div>
+                                            <div class="container">
+                                                <label>Student Email</label>
+                                                <?php
+                                                echo $dateClass['email'];?>
+                                            </div>
+                                        </div>
                                         <?php
                                     }?>
                 <?php }?>

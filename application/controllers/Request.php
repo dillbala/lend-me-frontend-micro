@@ -25,7 +25,7 @@ class Request extends MY_Controller {
     public function instructor()
     {
         $instructorId = $this->session->userdata['userId'];
-        $response= $this->service_model->getData('/v1/requests/?instructor_id='.$instructorId);
+        $response= $this->service_model->getData('/v1/requests/?instructorId='.$instructorId);
         $data['requests'] = array();
         if ($response['code']==200)
         {

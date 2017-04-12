@@ -42,6 +42,12 @@ class Instructor extends MY_Controller{
         $groupedClasses= array();
         foreach ($classes as $class )
         {
+            if ($class['student_id']!=null and $class['student_id']!='')
+            {
+                $studentData = $this->service_model->getData('/v1/users/'.$class['student_id'])['result']['data'];
+                $class['studentName'] = $studentData['firstName'].' '.$studentData['lastName'];
+                $class['email'] = $studentData['email'];
+            }
             if (!array_key_exists($class['date'],$groupedClasses))
             {
                 $groupedClasses[$class['date']] = array();

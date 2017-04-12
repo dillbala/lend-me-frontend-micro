@@ -20,13 +20,23 @@
                         <li><a class="" href="<?php echo base_url() . '' ?>">Profile</a></li>
                         <?php
                         if ($this->session->userdata['role'] == 3) {
+                            $accepted = $this->service_model->getData('/v1/requests/?status=2&sort=0&size=1&userId='.$this->session->userdata['userId'])['result']['data'];
 
                             ?>
 
                             <li><a class="" href="<?php echo base_url() . 'instructor/' ?>">Instructors</a></li>
+                            <?php
+                            if(!empty($accepted))
+                            {
+
+                            ?>
                             <li><a class="" href="<?php echo base_url() . 'student/classes' ?>">Classes</a></li>
+                                <li><a class="" href="<?php echo base_url() . 'student/bookClass' ?>">Book Classes</a></li>
+                            <?php
+                            }
+                            ?>
                             <li><a class="" href="<?php echo base_url() . 'document/index/'.$this->session->userdata['userId'] ?>">Documents</a></li>
-                            <li><a class="" href="<?php echo base_url() . 'student/bookClass' ?>">Book Classes</a></li>
+
 
                             <!--                        <li><a class="" href="--><?php //echo base_url().'Classes/'
                             ?><!--">Classes</a></li>-->
