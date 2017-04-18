@@ -12,10 +12,21 @@
         <div id="navbar">
             <ul class="nav navbar-nav">
 
-
-
+                <?php
+                if (array_key_exists('logged_in',$this->session->userdata))
+                {
+                    ?>
                         <li><a class="navbar-right" href="<?php echo base_url() . 'welcome/logout' ?>">Logout</a></li>
+                        <?php
 
+                }
+                else{
+                    ?>
+                        <h2>Welcome to lend paisa</h2>
+                    <?php
+
+                }
+                ?>
 
 
             </ul>
