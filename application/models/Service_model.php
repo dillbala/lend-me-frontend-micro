@@ -5,7 +5,7 @@ class Service_model extends CI_Model
 {
 
 
-    public $apiServer = 'http://54.254.209.255/mentor';
+    public $apiServer = 'http://54.254.209.255/micro';
 //    public $apiServer = 'http://127.0.0.1:5000';
 
     function __construct() {
