@@ -28,21 +28,10 @@ echo validation_errors();
 <div class="form-group">
     <label>First name</label>
     <input required type="text" class="form-control" name="firstName" value="<?php echo set_value('firstName');?>" placeholder="first name">
-    <label>Middle Name</label>
-    <input type="text" class="form-control" name="middleName" value="<?php echo set_value('middleName');?>" placeholder="middle name">
     <label>Last Name</label>
     <input required type="text" class="form-control" name="lastName" value="<?php echo set_value('lastName');?>" placeholder="last name">
     <label>Dob</label>
-    <input required type="date" class="form-control" name="dob" value="<?php echo set_value('date');?>" placeholder="Dob">
-    <label>Nationality</label>
-    <select required name="nationality" class="form-control">
-        <option selected value="">Nationality</option>
-        <option value="India">India</option>
-        <option value="Germany">Germany</option>
-    </select>
-
-    <label>Address</label>
-    <textarea required type="text" class="form-control" name="address" value="<?php echo set_value('address');?>" placeholder="Address"></textarea>
+    <input required type="date" class="form-control" name="dob" value="<?php echo set_value('dob');?>" placeholder="dob">
     <label>Mobile</label>
     <input required type="text" class="form-control" name="mobile" value="<?php echo set_value('mobile');?>" placeholder="Mobile">
     <label>email</label>

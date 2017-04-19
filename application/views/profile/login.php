@@ -7,8 +7,8 @@ echo validation_errors();
 ?>
 <?php echo form_open('');?>
 <div class="form-group">
-    <label>email</label>
-    <input required type="text" class="form-control" name="email" value="<?php echo set_value('email');?>" placeholder="email">
+    <label>mobile</label>
+    <input required type="text" class="form-control" name="mobile" value="<?php echo set_value('mobile');?>" placeholder="mobile">
     <label>Password</label>
     <input required type="password" class="form-control" name="password" value="<?php echo set_value('password');?>" placeholder="password">
 </div>

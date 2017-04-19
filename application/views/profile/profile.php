@@ -62,7 +62,7 @@
                                 <?php echo $this->session->userdata['firstName']?></h4>
                             <?php echo $this->session->userdata['lastName'];?>
                             <br>
-                            <small><cite ><?php echo $this->session->userdata['address'];?>,&nbsp<?php echo $this->session->userdata['nationality'];?>
+                            <small><cite ><?php echo $this->session->userdata['mobile'];?>
                                     </i></cite></small>
                             <p>
                                 <?php echo $this->session->userdata['email']?>

@@ -37,13 +37,13 @@ class Welcome extends CI_Controller {
         else {
             $data['title'] = 'Login';
             $this->form_validation->set_rules('password', 'Password', 'required');
-            $this->form_validation->set_rules('email', 'Email', 'required');
+            $this->form_validation->set_rules('mobile', 'Mobile', 'required');
             if ($this->form_validation->run() === FALSE) {
                 $this->load->view('/template/header');
                 $this->load->view('/profile/login', $data);
                 $this->load->view('/template/footer');
             } else {
-                $response = $this->service_model->postData(array('email' => $this->input->post('email'),
+                $response = $this->service_model->postData(array('mobile' => $this->input->post('mobile'),
                     'password' => $this->input->post('password')
                 ), '/v1/users/');
 //            echo "<pre>";print_r($response);
@@ -86,23 +86,12 @@ class Welcome extends CI_Controller {
                 'email'=>$this->input->post('email'),
                 'firstName'=>$this->input->post('firstName'),
                 'lastName'=>$this->input->post('lastName'),
-                'middleName'=>$this->input->post('middleName'),
-                'address'=>$this->input->post('address'),
                 'mobile'=>$this->input->post('mobile'),
-                'nationality'=>$this->input->post('nationality'),
                 'password'=>$this->input->post('password'),
                 'dob'=>$this->input->post('dob'),
                 'role'=>3,
                 'register'=>1
             );
-            if ($postData['nationality']=="India")
-            {
-                $postData['mobileCountry']='+91';
-            }
-            else{
-                // need to update it
-                $postData['mobileCountry']='+91';
-            }
             $response= $this->service_model->postData($postData,'/v1/users/');
             if ($response['code']==200)
             {
