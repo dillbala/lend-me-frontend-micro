@@ -30,9 +30,10 @@ class Welcome extends CI_Controller {
 
         if(isset($this->session->userdata['logged_in']) && $this->session->userdata['logged_in']==1)
         {
-            $this->load->view('/template/header');
-            $this->load->view('/profile/profile');
-            $this->load->view('/template/footer');
+            redirect('profile');
+//            $this->load->view('/template/header');
+//            $this->load->view('/profile/profile');
+//            $this->load->view('/template/footer');
         }
         else {
             $data['title'] = 'Login';
@@ -46,15 +47,14 @@ class Welcome extends CI_Controller {
                 $response = $this->service_model->postData(array('mobile' => $this->input->post('mobile'),
                     'password' => $this->input->post('password')
                 ), '/v1/users/');
-//            echo "<pre>";print_r($response);
-//            die();
                 if ($response['code'] == 200) {
                     $userData = $response['result']['data'];
                     $userData['logged_in'] = 1;
                     $this->session->set_userdata($userData);
-                    $this->load->view('/template/header');
-                    $this->load->view('/profile/profile', $data);
-                    $this->load->view('/template/footer');
+                    redirect('profile');
+//                    $this->load->view('/template/header');
+//                    $this->load->view('/profile/profile', $data);
+//                    $this->load->view('/template/footer');
                 } else {
                     $data['error'] = $response['result']['message'];
                     $this->load->view('/template/header');
@@ -152,6 +152,11 @@ class Welcome extends CI_Controller {
 
 
     }
+
+    public function profile(){
+
+    }
+
     public function logout() {
         $this->session->unset_userdata();
         $this->session->sess_destroy();

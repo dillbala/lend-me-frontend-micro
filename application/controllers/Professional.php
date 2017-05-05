@@ -1,10 +1,29 @@
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Upload extends MY_Controller{
+class Professional extends MY_Controller {
+
+    /**
+     * Index Page for this controller.
+     *
+     * Maps to the following URL
+     * 		http://example.com/index.php/welcome
+     *	- or -
+     * 		http://example.com/index.php/welcome/index
+     *	- or -
+     * Since this controller is set as the default controller in
+     * config/routes.php, it's displayed at http://example.com/
+     *
+     * So any other public methods not prefixed with an underscore will
+     * map to /index.php/welcome/<method_name>
+     * @see https://codeigniter.com/user_guide/general/urls.html
+     *
+     */
 
 
-    public function apply()
+
+    public function do_upload()
     {
         $config['upload_path']          = FCPATH.'uploads/';
 
@@ -71,7 +90,7 @@ class Upload extends MY_Controller{
         if (!empty($error))
         {
             $this->load->view('/template/sidebar_header');
-            $this->load->view('/details/add',$error);
+            $this->load->view('/professionals/profileAdd',$error);
             $this->load->view('/template/sidebar_footer');
         }
 
@@ -90,7 +109,7 @@ class Upload extends MY_Controller{
                 {
                     $error['error'] =  $response['result']['message'];
                     $this->load->view('/template/sidebar_header');
-                    $this->load->view('/details/add',$error);
+                    $this->load->view('/professionals/profileAdd',$error);
                     $this->load->view('/template/sidebar_footer');
                     break;
                 }
@@ -102,11 +121,10 @@ class Upload extends MY_Controller{
                 'panNumber'=>$this->input->post('panNumber'),
                 'employeeNumber'=>$this->input->post('employeeNumber'),
                 'bankName'=>$this->input->post('bankName'),
-                'roll_number'=>$this->input->post('roll_number'),
                 'branchName'=>$this->input->post('branchName'),
                 'ifscCode'=>$this->input->post('ifscCode'),
                 'accountNumber'=>$this->input->post('accountNumber')
-                );
+            );
 
             $response= $this->service_model->postData($profile_data,'/v1/profiles/');
 
@@ -118,38 +136,10 @@ class Upload extends MY_Controller{
             else {
                 $error['error'] =  $response['result']['message'];
                 $this->load->view('/template/sidebar_header');
-                $this->load->view('/details/add',$error);
+                $this->load->view('/professionals/profileAdd',$error);
                 $this->load->view('/template/sidebar_footer');
             }
 
         }
     }
-
-
-    public function add()
-    {
-        $path = $this->input->post('path');
-        $type = $this->input->post('type');
-        if($type=='salary')
-        {
-            $this->salary_model->add_salaries($path);
-            $data = array('message'=>'Uploaded salaries successfully');
-        }
-        elseif ($type=='expense')
-        {
-            $this->expense_model->add_expenses($path);
-            $data = array('message'=>'Uploaded expenses successfully');
-        }
-        elseif ($type=='attendance')
-        {
-            $this->attendance_model->add_attendances($path);
-            $data = array('message'=>'Uploaded attendance successfully');
-        }
-        $this->load->view('/template/header');
-        $this->load->view('uploads/success', $data);
-    }
-
-
 }
-
-

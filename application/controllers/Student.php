@@ -23,169 +23,113 @@ class Student extends MY_Controller {
 
 
 
-    public function timeDiff($time,$date)
+    public function do_upload()
     {
-        $time = explode('-',$time)[0];
-        $date1=date_create($date);
-        $date2=date_create(date('Y-m-d'));
-        $diff=date_diff($date2,$date1);
-        $day = $diff->format("%R%a");
-        if ($day[0]=='+' && $day[1]!=0)
+        $config['upload_path']          = FCPATH.'uploads/';
+
+        $config['allowed_types']        = 'pdf|jpg|jpeg';
+//        $config['max_size']             = 100;
+//        $config['max_width']            = 1024;
+//        $config['max_height']           = 768;
+
+        $this->load->library('upload', $config);
+//        echo "test";
+
+        $paths = array();
+        if ( ! $this->upload->do_upload('adharF'))
         {
-            return true;
-        }
-        return false;
-    }
-
-
-    public function cancelClass($classId)
-    {
-        echo $this->service_model->putData(array('student_id'=>$this->session->userdata['userId']),'/v1/timeslots/'.$classId)['result']['message'];
-    }
-
-    public function classes()
-    {
-        $user_id = $this->session->userdata['userId'];
-        $instructor_data = $this->get_my_instructor($user_id);
-        $data['instructor'] = $instructor_data;
-        $date = date('Y-m-d');
-        $lastDate = date('Y-m-d',strtotime("+7 day"));
-        $query = '';
-        $query.='status_instructor=2'.'&start_date='.$date.'&end_date='.$lastDate.'&instructor_id='.$instructor_data['id'];
-
-        $classes= $this->service_model->getData('/v1/timeslots/?'.$query)['result']['data'];
-        $groupedClasses= array();
-        foreach ($classes as $class )
-        {
-            if (!array_key_exists($class['date'],$groupedClasses))
-            {
-                $groupedClasses[$class['date']] = array();
-            }
-            if($this->timeDiff($class['slot_id'],$class['date']))
-            {
-                $class['cancel']=1;
-            }
-            else{
-                $class['cancel']=0;
-            }
-            array_push($groupedClasses[$class['date']],$class);
-        }
-        $data['classes'] = $groupedClasses;
-        $this->load->view('/template/header');
-        $this->load->view('/students/classes',$data);
-        $this->load->view('/template/footer');
-
-    }
-    public function addClass()
-    {
-        $user_id = $this->session->userdata['userId'];
-        $response = $this->service_model->postData(
-            array(
-                'student_id' => $user_id,
-                'ids'=>$this->input->post('ids'),
-                'classAdd'=>1
-            ),
-            '/v1/timeslots/'
-
-        );
-
-        print_r($response['code']);
-//        echo $response['code'];
-    }
-    public function get_my_instructor($userId)
-        {
-            $response = $this->service_model->getData('/v1/requests/?status=2&userId='.$userId);
-            if (!empty($response['result']['data']))
-
-            {
-                $instructorId = $response['result']['data'][0]['instructorId'];
-                return $this->service_model->getData('/v1/instructors/'.$instructorId)['result']['data'][0];
-            }
-            return False;
-
-        }
-
-    public function bookClass()
-    {
-        $user_id = $this->session->userdata['userId'];
-        $instructor_data = $this->get_my_instructor($user_id);
-        $data['instructor'] = $instructor_data;
-        $date = date('Y-m-d');
-        $lastDate = date('Y-m-d',strtotime("+7 day"));
-        $query = '';
-        $query.='status_instructor=1'.'&start_date='.$date.'&end_date='.$lastDate.'&instructor_id='.$instructor_data['id'];
-
-        $classes= $this->service_model->getData('/v1/timeslots/?'.$query)['result']['data'];
-        $groupedClasses= array();
-        foreach ($classes as $class )
-        {
-            if (!array_key_exists($class['date'],$groupedClasses))
-            {
-                $groupedClasses[$class['date']] = array();
-            }
-            array_push($groupedClasses[$class['date']],$class);
-        }
-        $data['classes'] = $groupedClasses;
-        $this->load->view('/template/header');
-        $this->load->view('/students/bookClass',$data);
-        $this->load->view('/template/footer');
-    }
-
-    public function documents($user_id)
-    {
-        $data['title'] = 'Documents';
-        $response= $this->service_model->getData('/v1/documents/'.$user_id);
-        if ($response['code']==200)
-        {
-            $data['documents'] = $response['result']['data'];
-            $this->load->view('/template/header');
-            $this->load->view('/documents/index',$data);
-            $this->load->view('/template/footer');
+            $error = array('error' => $this->upload->display_errors());
         }
         else{
-            $data['error'] = $response['result']['message'];
-            $this->load->view('/template/header');
-            $this->load->view('/documents/index',$data);
-            $this->load->view('/template/footer');
+            $paths['adharF']=$this->upload->data()['full_path'];
         }
 
-
-    }
-
-
-    public function noc()
-    {
-        $response= $this->service_model->getData('/v1/students/?role=3&noc=0');
-        $this->load->view('/template/header');
-        if ($response['code']==200)
+        if ( ! $this->upload->do_upload('adharB'))
         {
-            $data['students'] = $response['result']['data'];
-
-            $this->load->view('/students/noc',$data);
+            $error = array('error' => $this->upload->display_errors());
 
         }
         else{
-            $data['error'] = $response['result']['message'];
-            $this->load->view('/students/noc',$data);
+            $paths['adharB']=$this->upload->data()['full_path'];
         }
-        $this->load->view('/template/footer');
-    }
+        if ( ! $this->upload->do_upload('panCard'))
+        {
 
-    public function view($user_id)
-    {
-        $response= $this->service_model->getData('/v1/users/'.$user_id);
-        $data = $response['result']['data'];
-        $data['documents'] = $this->service_model->getData('/v1/documents/'.$user_id)['result']['data'];
-        $this->load->view('/template/header');
-        $this->load->view('/students/view',$data);
-    }
+        }
+        else{
+            $paths['panCard']=$this->upload->data()['full_path'];
+        }
 
+        if ( ! $this->upload->do_upload('collegeId'))
+        {
+            $error = array('error' => $this->upload->display_errors());
 
+        }
+        else{
+            $paths['collegeId']=$this->upload->data()['full_path'];
+        }
 
+        if ( ! $this->upload->do_upload('bankStatement'))
+        {
+            $error = array('error' => $this->upload->display_errors());
 
-    public function logout() {
-        $this->session->unset_userdata('userData');
-        $this->session->sess_destroy();
-        redirect('/');
+        }
+        else{
+            $paths['bankStatement']=$this->upload->data()['full_path'];
+        }
+        if (!empty($error))
+        {
+            $this->load->view('/template/sidebar_header');
+            $this->load->view('/students/profileAdd',$error);
+            $this->load->view('/template/sidebar_footer');
+        }
+
+        else
+        {
+            $user_id = $this->input->post('user_id');
+
+            foreach ($paths as $path=>$pathValue)
+            {
+                $data = array('path' => $pathValue,
+                    'user_id'=>$user_id,
+                    'type'=>$path
+                );
+                $response = $this->service_model->fileData('/v1/documents/',$data);
+                if ($response['code']!=200)
+                {
+                    $error['error'] =  $response['result']['message'];
+                    $this->load->view('/template/sidebar_header');
+                    $this->load->view('/students/profileAdd',$error);
+                    $this->load->view('/template/sidebar_footer');
+                    break;
+                }
+            }
+
+            $profile_data = array(
+                'role'=>$this->session->userdata['role'],
+                'adharNumber'=>$this->input->post('adharNumber'),
+                'panNumber'=>$this->input->post('panNumber'),
+                'bankName'=>$this->input->post('bankName'),
+                'roll_number'=>$this->input->post('rollNumber'),
+                'branchName'=>$this->input->post('branchName'),
+                'ifscCode'=>$this->input->post('ifscCode'),
+                'accountNumber'=>$this->input->post('accountNumber')
+            );
+
+            $response= $this->service_model->postData($profile_data,'/v1/profiles/');
+
+            if ($response['code']==200)
+            {
+                $this->session->set_userdata('profile_status',1);
+                redirect('profile');
+            }
+            else {
+                $error['error'] =  $response['result']['message'];
+                $this->load->view('/template/sidebar_header');
+                $this->load->view('/students/profileAdd',$error);
+                $this->load->view('/template/sidebar_footer');
+            }
+
+        }
     }
 }

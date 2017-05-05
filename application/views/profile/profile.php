@@ -6,7 +6,7 @@
     {
         ?>
         <h1> Hi <?php echo $this->session->userdata['firstName'];?></h1>
-        <p>You have not verified your email yet. Please check your email and paste the code below.</p>
+        <p>You have not verified your account yet. Please check your messages and paste the code below.</p>
         <?php
         ?>
 
@@ -49,13 +49,25 @@
 
         ?>
 
-        <div class="container pull-right">
+<!--        <div class="container-fluid pull-right">-->
+        <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="well well-sm">
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
-                            <img src="<?php echo base_url().'assets/images/user_profile.png'?>" alt="" class="img-rounded img-responsive" />
+
+                            <?php if (!empty($this->session->userdata['profile_pic']))
+                                {
+
+                                    $file = $this->service_model->apiServer.'/static/'.$this->session->userdata['profile_pic'];
+
+                                }
+                                else{
+                                    $file = base_url().'assets/images/user_profile.png';
+                                }
+                                ?>
+                            <img src="<?php echo $file ?>"  alt="" class="img-rounded img-responsive" />
                         </div>
                         <div class="col-sm-6 col-md-8">
                             <h4>
@@ -66,6 +78,7 @@
                                     </i></cite></small>
                             <p>
                                 <?php echo $this->session->userdata['email']?>
+                                <?php echo $this->session->userdata['profile_status']?>
                                 <br />
                                 <br />
                         </div>
