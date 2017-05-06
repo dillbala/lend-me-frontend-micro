@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 //$config['base_url'] = 'http://127.0.0.1:1003/';
 //$config['base_url'] = 'http://52.66.18.75/';
-$config['base_url'] = 'http://lendpaisa.com/';
+$config['base_url'] = 'https://lendpaisa.com/';
 
 /*
 |--------------------------------------------------------------------------
