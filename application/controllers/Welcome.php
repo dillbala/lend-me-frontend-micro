@@ -30,7 +30,13 @@ class Welcome extends CI_Controller {
 
         if(isset($this->session->userdata['logged_in']) && $this->session->userdata['logged_in']==1)
         {
-            redirect('profile');
+            if ($this->session->userdata['role']==0)
+            {
+                redirect('admin');
+            }
+            else {
+                redirect('profile');
+            }
 //            $this->load->view('/template/header');
 //            $this->load->view('/profile/profile');
 //            $this->load->view('/template/footer');
@@ -51,7 +57,13 @@ class Welcome extends CI_Controller {
                     $userData = $response['result']['data'];
                     $userData['logged_in'] = 1;
                     $this->session->set_userdata($userData);
-                    redirect('profile');
+                    if ($userData['role']==0)
+                    {
+                        redirect('admin');
+                    }
+                    else {
+                        redirect('profile');
+                    }
 //                    $this->load->view('/template/header');
 //                    $this->load->view('/profile/profile', $data);
 //                    $this->load->view('/template/footer');
@@ -98,9 +110,18 @@ class Welcome extends CI_Controller {
                 $userData = $response['result']['data'];
                 $userData['logged_in']=1;
                 $this->session->set_userdata($userData);
+                if ($userData['role']==0)
+                {
+                    redirect('admin');
+
+                }
+                else{
+
+
                 $this->load->view('/template/header');
                 $this->load->view('/profile/profile',$data);
                 $this->load->view('/template/footer');
+                }
             }
             else{
                 $data['error'] = $response['result']['message'];
@@ -158,7 +179,7 @@ class Welcome extends CI_Controller {
     }
 
     public function logout() {
-        $this->session->unset_userdata();
+//        $this->session->unset_userdata();
         $this->session->sess_destroy();
         redirect('/');
     }

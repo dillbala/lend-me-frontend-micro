@@ -1,4 +1,3 @@
-
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -23,11 +22,32 @@ class Professional extends MY_Controller {
 
 
 
+    public function view($userId)
+    {
+        if($this->session->userData['userId']==$userId||$this->session->userData['role']==0)
+        {
+            $user_data = $this->service_model->getData('/v1/users/'.$userId)['result']['data'];
+            $userDocumentData = $this->service_model->getData('/v1/documents/'.$userId)['result']['data'];
+
+            $data = array('userData'=>$user_data,'documentData'=>$userDocumentData);
+
+            $this->load->view('profile/approve',$data);
+
+        }
+        else{
+            show_404();
+        }
+
+
+
+    }
+
+
     public function do_upload()
     {
         $config['upload_path']          = FCPATH.'uploads/';
 
-        $config['allowed_types']        = 'pdf|jpg|jpeg';
+        $config['allowed_types']        = 'pdf|jpg|jpeg|png';
 //        $config['max_size']             = 100;
 //        $config['max_width']            = 1024;
 //        $config['max_height']           = 768;

@@ -21,7 +21,25 @@ class Student extends MY_Controller {
      *
      */
 
+    public function view($userId)
+    {
+        if($this->session->userData['userId']==$userId||$this->session->userData['role']==0)
+        {
+            $user_data = $this->service_model->getData('/v1/users/'.$userId);
+            $userDocumentData = $this->service_model->getData('/v1/documents/'.$userId);
 
+            $data = array('userData'=>$user_data,'documentData'=>$userDocumentData);
+
+            $this->load->view('profile/approve',$data);
+
+        }
+        else{
+            show_404();
+        }
+
+
+
+    }
 
     public function do_upload()
     {
