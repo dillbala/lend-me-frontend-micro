@@ -22,6 +22,7 @@
     <div class="form-group col-sm-6">
         <label class="center-block">Personal and Company Details</label>
         <hr>
+        <div class="well">
         <div class="input-group ">
            <span class="input-group-addon"><label>Adhar Card Front</label></span>
             <input required class="form-control" type="file" name="adharF" value="<?php echo set_value('adharF');?>" >
@@ -37,7 +38,7 @@
             <span class="input-group-addon"><label>Adhar Number</label></span>
             <input required class="form-control" type="text" name="adharNumber" value="<?php echo set_value('adharNumber');?>" placeholder="Adhar Number" minlength="12" maxlength="12">
         </div>
-
+        </div>
         <br>
         <div class="input-group">
             <span class="input-group-addon"><label>Pan Card</label></span>

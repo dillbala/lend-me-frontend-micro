@@ -12,13 +12,40 @@ class Profile extends MY_Controller{
 //        $this->load->view('/profile/profile');
 //        $this->load->view('/template/footer');
 
-        if(empty($this->session->userdata['profile_pic']))
+
+//        print_r($this->session);
+
+
+
+        if(isset($this->session->userdata['status']))
         {
-            redirect('profile/capture_picture');
-        }
-        $this->load->view('/template/sidebar_header');
+
+            if($this->session->userdata['status']==0)
+            {
+                $data['message'] = 'Please verify your identity first';
+                if(isset($this->session->userdata['last_url']))
+                {
+                    if($this->session->userdata['last_url']=='welcome/resend')
+                    {
+                        $data['message'] = $this->session->userdata['message'];
+                        $this->session->set_userdata(array('last_url'=>'profile/index','message'=>''));
+                    }
+                }
+                $this->load->view('/template/header');
+                $this->load->view('/profile/profile',$data);
+            }
+            else{
+                if(empty($this->session->userdata['profile_pic']))
+                {
+                    redirect('profile/capture_picture');
+                }
+                $this->load->view('/template/sidebar_header');
                 $this->load->view('/profile/profile');
                 $this->load->view('/template/sidebar_footer');
+            }
+        }
+
+
 
 //        $this->load->view('/profile/test');
 //        $response= $this->service_model->getData('/v1/instructors/');
@@ -77,6 +104,16 @@ class Profile extends MY_Controller{
 
 
 
+    }
+
+
+    public function history()
+    {
+        $this->load->view('/template/sidebar_header');
+        $user_data = $this->service_model->getData('/v1/loans/?sort=0&user_id='.$this->session->userdata['userId'])['result']['data'];
+
+        $this->load->view('/profile/history',$user_data);
+        $this->load->view('/template/sidebar_footer');
     }
 
 

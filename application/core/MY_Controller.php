@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+date_default_timezone_set('Asia/Kolkata');
 class MY_Controller extends CI_Controller {
 
     function __construct()
@@ -13,6 +14,16 @@ class MY_Controller extends CI_Controller {
             if(($this->session->userdata['logged_in'])!=1)
             {
                 redirect('');
+            }
+            $length = strlen('/profile');
+            $newStr = substr($_SERVER['REQUEST_URI'],0,$length);
+            if($newStr!='/profile')
+            {
+                    if(empty($this->session->userdata['profile_pic']))
+                        {
+
+                        redirect('profile/');
+                    }
             }
         }
         else{

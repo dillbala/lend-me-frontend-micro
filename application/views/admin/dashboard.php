@@ -1,11 +1,7 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: jack
- * Date: 23/05/17
- * Time: 4:17 PM
- */
 
-
-
-echo "testing is going on";
+<div class="col-sm-4 col-sm-offset-4" style="padding-top: 10%">
+    <div class="well">
+        <p class="">Hi Admin !</p>
+        <p>Welcome to admin area.</p>
+    </div>
+</div>

@@ -28,7 +28,7 @@
 
             <div class="container-fluid">
                 <ul class="nav navbar-left ">
-                    <li><a href="#" class="icon-bar" id="menu-toggle"><img src="<?php echo base_url().'assets/images/menu.png';?>"></a></li>
+                    <li><a href="" class="icon-bar" id="menu-toggle"><img src="<?php echo base_url().'assets/images/menu.png';?>"></a></li>
 
 
                 </ul>
@@ -50,7 +50,6 @@
                 <ul class="sidebar-nav">
 
                     <li>
-                        <p>Jack Sparrow</p>
                         <!--                       <img class="image"><div class="container">-->
                         <!--                   -->
                         <!--                           -->
@@ -60,10 +59,10 @@
                 </ul>
                 <hr>
                 <li><a href="<?php echo base_url().'apply';?>"> Apply For Loan</a></li>
-                <li><a href="#"> History </a></li>
+                <li><a href="<?php echo base_url().'profile/history';?>"> History </a></li>
                 <li><a href="<?php echo base_url().'profile';?>"> Profile</a></li>
                 <li><a href="#"> Repayment </a></li>
-                <li><a href="<?php echo base_url().'apply';?>"> Settings</a></li>
+<!--                <li><a href="--><?php //echo base_url().'apply';?><!--"> Settings</a></li>-->
 
                 <hr>
                 <li><a  href="<?php echo base_url() . 'welcome/logout' ?>">Logout</a></li>

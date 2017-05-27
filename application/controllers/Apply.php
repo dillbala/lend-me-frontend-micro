@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Apply extends MY_Controller{
 
+//
+//    function __construct()
+//    {
+//
+//        echo "Forst placw";
+//    }
 
     public function index()
     {

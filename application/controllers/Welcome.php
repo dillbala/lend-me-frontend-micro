@@ -15,7 +15,7 @@ class Welcome extends CI_Controller {
 	 * config/routes.php, it's displayed at http://example.com/
 	 *
 	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
+	 * map to /index.html/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
      *
 	 */
@@ -46,7 +46,7 @@ class Welcome extends CI_Controller {
             $this->form_validation->set_rules('password', 'Password', 'required');
             $this->form_validation->set_rules('mobile', 'Mobile', 'required');
             if ($this->form_validation->run() === FALSE) {
-                $this->load->view('/template/header');
+//                $this->load->view('/template/header');
                 $this->load->view('/profile/login', $data);
                 $this->load->view('/template/footer');
             } else {
@@ -69,7 +69,7 @@ class Welcome extends CI_Controller {
 //                    $this->load->view('/template/footer');
                 } else {
                     $data['error'] = $response['result']['message'];
-                    $this->load->view('/template/header');
+//                    $this->load->view('/template/header');
                     $this->load->view('/profile/login', $data);
                     $this->load->view('/template/footer');
                 }
@@ -89,7 +89,7 @@ class Welcome extends CI_Controller {
         $this->form_validation->set_rules('email','Email','required');
         if($this->form_validation->run()===FALSE)
         {
-            $this->load->view('/template/header');
+//            $this->load->view('/template/header');
             $this->load->view('/profile/signup',$data);
             $this->load->view('/template/footer');
         }
@@ -101,9 +101,11 @@ class Welcome extends CI_Controller {
                 'mobile'=>$this->input->post('mobile'),
                 'password'=>$this->input->post('password'),
                 'dob'=>$this->input->post('dob'),
-                'role'=>3,
+                'role'=>$this->input->post('role'),
                 'register'=>1
             );
+
+//            echo "<pre>";print_r($postData);
             $response= $this->service_model->postData($postData,'/v1/users/');
             if ($response['code']==200)
             {
@@ -118,7 +120,7 @@ class Welcome extends CI_Controller {
                 else{
 
 
-                $this->load->view('/template/header');
+//                $this->load->view('/template/header');
                 $this->load->view('/profile/profile',$data);
                 $this->load->view('/template/footer');
                 }
@@ -146,7 +148,12 @@ class Welcome extends CI_Controller {
             $data['message'] = 'You can not send this request';
         }
 
-        redirect('');
+//        $this->load->view('/template/header');
+//        $this->load->view('/profile/profile',$data);
+        $this->session->set_userdata(array('last_url'=>'welcome/resend','message'=>$data['message']));
+
+
+        redirect('profile/');
 
     }
 

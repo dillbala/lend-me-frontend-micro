@@ -15,7 +15,7 @@ class Admin extends ADMIN_Parent {
      * config/routes.php, it's displayed at http://example.com/
      *
      * So any other public methods not prefixed with an underscore will
-     * map to /index.php/welcome/<method_name>
+     * map to /index.html/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      *
      */
@@ -32,7 +32,7 @@ class Admin extends ADMIN_Parent {
     {
 
         $response= $this->service_model->getData('/v1/users/?profile_status=1&role=3&noc=0');
-        $this->load->view('/template/header');
+        $this->load->view('/template/admin_header');
 
 
         if ($response['code']==200)
@@ -54,11 +54,44 @@ class Admin extends ADMIN_Parent {
 
     }
 
+
+    public function students()
+    {
+
+        $response= $this->service_model->getData('/v1/users/?profile_status=1&role=4&noc=0');
+        $this->load->view('/template/admin_header');
+
+
+        if ($response['code']==200)
+        {
+            $data['users'] = $response['result']['data'];
+            $this->load->view('/admin/usersListing',$data);
+
+//            foreach ($data['professionals'] as $professional)
+//            {
+//                echo "<pre>";print_r($professional);echo "<a href='".base_url()."professional/view/".$professional['userId']."'>view user</a>";
+//                echo "<hr>";
+//            }
+
+        }
+        else{
+//            $data['error'] = $response['result']['message'];
+//            $this->load->view('/students/noc',$data);
+        }
+
+    }
+
+
+
+
     public function loanRequests()
     {
-        $loan_requests = $this->service_model->getData('/v1/loans/?status=0')['result']['data'];
+        $loan_requests = $this->service_model->getData('/v1/loans/')['result']['data'];
 
-        $this->load->view('/template/header');
+//        echo "<pre>";print_r($loan_requests);
+//        die();
+
+        $this->load->view('/template/admin_header');
         $this->load->view('/admin/pendingLoanRequests',$loan_requests);
 
 
@@ -68,6 +101,7 @@ class Admin extends ADMIN_Parent {
     public function approveUser($userId)
     {
         $response= $this->service_model->putData(array('noc'=>'1'),'/v1/users/'.$userId);
+        redirect('admin/');
         if ($response['code']==200)
         {
             echo "200";
@@ -81,6 +115,7 @@ class Admin extends ADMIN_Parent {
     public function rejectLoan($loanId)
     {
         $response= $this->service_model->putData(array('status'=>'4'),'/v1/loans/'.$loanId);
+        redirect('admin/loanRequests');
         if ($response['code']==200)
         {
             echo "200";
@@ -88,12 +123,14 @@ class Admin extends ADMIN_Parent {
         else{
             echo $response['result']['message'];
         }
+
 
     }
 
     public function acceptLoan($loanId)
     {
         $response= $this->service_model->putData(array('status'=>'2'),'/v1/loans/'.$loanId);
+        redirect('admin/loanRequests');
         if ($response['code']==200)
         {
             echo "200";
@@ -101,6 +138,7 @@ class Admin extends ADMIN_Parent {
         else{
             echo $response['result']['message'];
         }
+
     }
 
 

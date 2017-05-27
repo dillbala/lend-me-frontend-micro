@@ -11,7 +11,37 @@ html {
 }
 body {
     margin: 0;
+    background: red;
+    /*background: #ebebeb;*/
 }
+
+
+.form-group.required .control-label:after {
+    content:"*";
+    color:red;
+}
+
+
+.modal {
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+    }
+}
+
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+
 article,
 aside,
 details,
@@ -1086,7 +1116,8 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
-    background-color: #fff;
+    /*background-color: #fff;*/
+    background-color: #ebebeb;
 }
 input,
 button,
@@ -4495,7 +4526,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default {
     /*background-color: #f8f8f8;*/
-    background-color: #d9d9d9;
+    background-color: white;
+    /*background-color: #d9d9d9;*/
     border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {

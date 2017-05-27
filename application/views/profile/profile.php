@@ -78,7 +78,6 @@
                                     </i></cite></small>
                             <p>
                                 <?php echo $this->session->userdata['email']?>
-                                <?php echo $this->session->userdata['profile_status']?>
                                 <br />
                                 <br />
                         </div>

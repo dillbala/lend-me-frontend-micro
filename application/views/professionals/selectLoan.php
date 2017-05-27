@@ -7,7 +7,17 @@
 
 <?php if (!$is_eligible_for_loan)
 {
-    echo $loan_message;
+
+    ?>
+
+    <div class="col-sm-4 col-sm-offset-4" style="padding-top: 10%">
+        <div class="well text-center">
+            <?php echo $loan_message;?>
+        </div>
+    </div>
+
+    <?php
+
 }
 else{
 
@@ -98,18 +108,49 @@ else{
 
         var amount = $('#amount').val();
         var days = $('#days').val();
-        var rate = 0.2;
+        var interest = 0.0;
+        var week1 = 0;
+        var week2 = 0;
+        var week3 = 0;
+        var week4 = 0;
+        if ((days/7)>0)
+        {
+            week1 = 7;
+        }
+        else{
+            week1 = days%7;
+        }
 
-        if (days<=7)
-            rate = 0.2;
-        if (days>7 && days<=14)
-            rate = 0.4;
-        if (days>14 && days<=21)
-            rate = 0.6;
-        if (days>21 && days<=31)
-            rate = 0.8;
+
+        if (days/14>0)
+        {
+
+            week2 = 7;
+        }
+        else{
+
+            week2 = days%14-7;
+        }
+
+        if (days/21>0)
+        {
+            week3 = 7;
+
+        }
+        else{
+
+            week3 = days%21-14;
+        }
+        if (days>21)
+        {
+
+            week4 = days-21;
+        }
+
+
+        interest = ((week1*0.2*amount)+(week2*0.4*amount)+(week3*0.6*amount)+(week4*0.8*amount))/100;
+
         $('#borrwing').val(amount);
-        var interest = (amount*days*rate)/100;
         $('#interest').val(interest);
         $('#total').val(parseFloat(amount)+parseFloat(interest));
 

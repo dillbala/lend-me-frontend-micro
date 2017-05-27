@@ -1,4 +1,3 @@
-
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -16,7 +15,7 @@ class Student extends MY_Controller {
      * config/routes.php, it's displayed at http://example.com/
      *
      * So any other public methods not prefixed with an underscore will
-     * map to /index.php/welcome/<method_name>
+     * map to /index.html/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      *
      */
@@ -25,9 +24,8 @@ class Student extends MY_Controller {
     {
         if($this->session->userData['userId']==$userId||$this->session->userData['role']==0)
         {
-            $user_data = $this->service_model->getData('/v1/users/'.$userId);
-            $userDocumentData = $this->service_model->getData('/v1/documents/'.$userId);
-
+            $user_data = $this->service_model->getData('/v1/users/'.$userId)['result']['data'];
+            $userDocumentData = $this->service_model->getData('/v1/documents/'.$userId)['result']['data'];
             $data = array('userData'=>$user_data,'documentData'=>$userDocumentData);
 
             $this->load->view('profile/approve',$data);
@@ -45,7 +43,7 @@ class Student extends MY_Controller {
     {
         $config['upload_path']          = FCPATH.'uploads/';
 
-        $config['allowed_types']        = 'pdf|jpg|jpeg';
+        $config['allowed_types']        = 'pdf|jpg|jpeg|png';
 //        $config['max_size']             = 100;
 //        $config['max_width']            = 1024;
 //        $config['max_height']           = 768;

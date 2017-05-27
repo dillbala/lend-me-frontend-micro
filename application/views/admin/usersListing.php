@@ -35,7 +35,11 @@
         }
     }
     else{
-        echo "No pending requests";
+        ?>
+
+        <div>There are no pending requests.</div>
+        <?php
+
     }
 
     ?>
