@@ -35,6 +35,7 @@
                         ?>
                         <li><a class="navbar-right" href="<?php echo base_url() . 'admin/professionals' ?>">Pending Professional</a></li>
                         <li><a class="navbar-right" href="<?php echo base_url() . 'admin/students' ?>">Pending Students</a></li>
+                        <li><a class="navbar-right" href="<?php echo base_url() . 'admin/loanRequests' ?>">Pending Loan Requests</a></li>
                         <li><a class="navbar-right" href="<?php echo base_url() . 'welcome/logout' ?>">Logout</a></li>
                         <?php
 

@@ -54,6 +54,16 @@ class Admin extends ADMIN_Parent {
 
     }
 
+    public function loanRequests()
+    {
+        $loan_requests = $this->service_model->getData('/v1/loans/?status=0')['result']['data'];
+
+        $this->load->view('/template/header');
+        $this->load->view('/admin/pendingLoanRequests',$loan_requests);
+
+
+    }
+
 
     public function approveUser($userId)
     {
@@ -66,6 +76,31 @@ class Admin extends ADMIN_Parent {
             echo $response['result']['message'];
         }
 
+    }
+
+    public function rejectLoan($loanId)
+    {
+        $response= $this->service_model->putData(array('status'=>'4'),'/v1/loans/'.$loanId);
+        if ($response['code']==200)
+        {
+            echo "200";
+        }
+        else{
+            echo $response['result']['message'];
+        }
+
+    }
+
+    public function acceptLoan($loanId)
+    {
+        $response= $this->service_model->putData(array('status'=>'2'),'/v1/loans/'.$loanId);
+        if ($response['code']==200)
+        {
+            echo "200";
+        }
+        else{
+            echo $response['result']['message'];
+        }
     }
 
 

@@ -4,6 +4,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/css/bootstrap-slider.min.css">
 
 
+
+<?php if (!$is_eligible_for_loan)
+{
+    echo $loan_message;
+}
+else{
+
+
+?>
 <div class="container-fluid">
 
 
@@ -34,7 +43,7 @@
 
         <br>
         </br>
-        <button class="btn btn-success" type="submit">Apply for Loan</button>
+        <button class="btn btn-success" id= "apply" >Apply for Loan</button>
     </form>
 </div>
 
@@ -53,6 +62,37 @@
             return 'Rs: ' + value;
         }
     });
+
+
+    $('#apply').click(function () {
+
+
+        $.post("<?php echo base_url().'apply/applyLoan/';?>",{ 'ex1': $('#amount').val(),
+            'ex2':$('#days').val()
+        } ).done(function(resultData) {
+            resultData = resultData.trim('\n');
+            alert(resultData);
+            if (resultData=='200')
+            {
+               alert('applied for loan successfully');
+               window.location.reload();
+
+            }
+            else{
+                alert(resultData);
+            }
+
+            return false;
+        });
+
+//        alert($('#amount').val());
+//        alert($('#days').val());
+
+
+
+
+    });
+
 
     function calculate() {
 
@@ -99,3 +139,9 @@
 
 
 </script>
+
+
+
+<?php }
+
+?>
