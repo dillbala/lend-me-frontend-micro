@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<title>LendPaisa | Instant Personal Loan, EazyEMI, Pay Over Time</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="LendPaisa">
+  <meta name="keywords" content="HTML,CSS,JavaScript">
+  <meta name="author" content="dillbala">
+  <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.range.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link href='css/custom.css' rel='stylesheet' type='text/css'>
+  <link href="css/jquery.range.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="js/custom.js"></script>
+</head>
+<body id="scroll-style" style="background-color:#fff">
+<div class="click-overlay"></div>
+<div class="container-fluid">
+<!-- 	<div class="top-header">
+		<div class="container">
+
+		</div>
+	</div> -->
+    <div class="calculator">
+    <img class="img-responsive" id="calculator" src="images/calculator.png">
+     <div class="home-calculator">
+      <div class="price-box-1">
+          <p id="close" style="color:#fff">X</p>
+          <h4>AMOUNT</h4><br />
+          <input class="slider-amount" id="slider-amount" type="hidden" value="100"/><br>
+          <h4>DAYS</h4><br />
+          <input class="slider-days" id="slider-days" type="hidden" value="7"/><br><br>
+          <p class="calculation">Borrowing : Rs.<span id="amount"></span> + interest : Rs.<span id="interest"><span></p>
+          <h3>Total Amount : Rs. <span id="total_amount">0.00</span></h3><br>
+          <div class="text-center"><button type="submit" class="btn btn-success btn-lg">GET LOAN</button></div>
+      </div>
+    </div>
+  </div>
+	<div class="header">
+		<div class="container">
+			<nav>
+				<div class="row">
+					<div class="col-md-4 col-sm-4 col-xs-4 button">
+						<a class="btn-open" href="#"></a>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-4 logo">
+						<a href="index.html"><img src="logo.png" height="50px"></a>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-4 sign">
+						<a href=""><span>SIGN IN </span><i class="fa fa-lock headerLockIcon"></i></a>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+<div class="overlay">
+<div class="wrap">
+	<ul class="wrap-nav">
+        <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>  Home</a></li>
+        <li><a href="how_it_works.html"><i class="fa fa-info-circle" aria-hidden="true"></i>  How it Works</a></li>
+        <li><a href="security.html"><i class="fa fa-key" aria-hidden="true"></i>  Security</a></li>
+        <!-- <li><a href="lendpaisa_cashless.html"><i class="fa fa-money" aria-hidden="true"></i>  LendPaisa Cashless</a></li> -->
+        <!-- <li><a href="repay_anytime.html"><i class="fa fa-credit-card" aria-hidden="true"></i>  Repay Anytime</a></li> -->
+        <li><a href="help_center.html"><i class="fa fa-phone-square" aria-hidden="true"></i>  Help Center</a></li>
+        <li><a href="about_us.html" class="active"><i class="fa fa-mobile" aria-hidden="true"></i>  About Us</a></li>
+    </ul>
+</div>
+</div>
+
+<!-- <div class="slider-section slider-bottom">
+  <div class="container">
+      <div class="grid-content text-center">
+          <h5>LendPaisa has a vision where no one get short of moeny, everyone should have power to buy what they wish for. With this vision LendPaisa brings you a super easy, super simple platform where you can unleash the power of money, Do more in less. Live the life.</h5>
+      </div>   
+  </div>
+</div> -->
+
+<!--<div class="image-section">
+    <img class="img-responsive" src="images/about-us.jpg" alt="how it works">
+</div>
+<div class="tab-section-1">
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">OUR STORY</a></li>
+            <li><a data-toggle="tab" href="#menu1">VISION & MISSION</a></li>
+            <li><a data-toggle="tab" href="#menu2">LENDPAISA IN PRESS</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                     <img src="http://placehold.it/600x400/#ccc/#ccc" alt="First slide">
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                     <img src="http://placehold.it/600x400/#ccc/#ccc" alt="First slide">
+                </div>
+            </div>
+            </div>
+            <div id="menu1" class="tab-pane fade">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                     <img src="http://placehold.it/600x400/#ccc/#ccc" alt="First slide">
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                     <img src="http://placehold.it/600x400/#ccc/#ccc" alt="First slide">
+                </div>
+            </div>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+             <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                     <img src="http://placehold.it/200x200/#ccc/#ccc" alt="First slide">
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                     <img src="http://placehold.it/200x200/#ccc/#ccc" alt="First slide">
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                     <img src="http://placehold.it/200x200/#ccc/#ccc" alt="First slide">
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                     <img src="http://placehold.it/200x200/#ccc/#ccc" alt="First slide">
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="headings">
+    <h4>ABOUT US</h4>
+</div>
+<div class="grid-section-1">
+    <div class="container">
+        <hr>
+        <div class="row text-center">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="color:#666; letter-spacing: 1.5px;">
+                <!-- <img class="img-responsive" src="http://placehold.it/1200x200/#ccc/#ccc"> -->
+                <h5>LendPaisa is a team of energetic, visionary like minded people who believe that money should not be hurdle for good life.</h5>
+                <h5>We imagine a world where people buy whatever they wish and pay later in easy small comfortable emi's.</h5>
+                <h5>We at LendPaisa work to provide you the best service, and hope to serve in future.</h5>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>
+<div class="headings">
+    <h4>GET IN TOUCH</h4>
+</div>
+<div class="grid-section-1">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="color:#666;">
+                <!-- <img class="img-responsive" src="http://placehold.it/1200x200/#ccc/#ccc"> -->
+                <h5><i class="fa fa-phone" aria-hidden="true"></i> 080-4112-0233</h5>
+                <h5><i class="fa fa-envelope" aria-hidden="true"></i> admin@lendpaisa.com</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="headings">
+    <h4>USE TO REACH US</h4>
+</div>
+<div class="grid-section-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <!-- <img class="img-responsive" src="http://placehold.it/1200x400/#ccc/#ccc"> -->
+                <div class="map maps">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8354762921595!2d77.62978001437453!3d12.918293690890854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae148b5fabcf8d%3A0xa9a0c77e61493c37!2sLendPaisa!5e0!3m2!1sen!2sin!4v1494482397050" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+
+<div class="footer-section">
+	<div class="row">
+		<div class="col-md-6 col-sm-12 grid">
+			<span class="text">FIND US ON</span>
+			<ul class="list-inline">
+				<li class="list-inline-item"><i class="fa fa-facebook" aria-hidden="true"></i></li>
+				<li class="list-inline-item"><i class="fa fa-linkedin" aria-hidden="true"></i></i></li>
+				<li class="list-inline-item"><i class="fa fa-twitter" aria-hidden="true"></i></li>
+				<li class="list-inline-item"><i class="fa fa-google-plus" aria-hidden="true"></i></li>
+			</ul>
+		</div>
+		<div class="col-md-6 grid-1 col-sm-12">
+			<span class="text">SECURED BY 256 BIT SSL SECURITY Learn more</span>
+			<ul class="list-inline">
+				<li class="list-inline-item"><i class="fa fa-cc-amex" aria-hidden="true"></i></li>
+				<li class="list-inline-item"><i class="fa fa-cc-paypal" aria-hidden="true"></i></i></li>
+				<li class="list-inline-item"><i class="fa fa-cc-visa" aria-hidden="true"></i></li>
+				<li class="list-inline-item"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></li>
+			</ul>
+		</div>
+		</div>
+	<div class="row" style="background-color:#fff">
+		<div class="col-md-12 col-sm-12">
+			<ul class="list-inline">
+				<li class="list-inline-item"><a href="terms-and-conditions.html">TERMS AND CONDITIONS</a></li>
+        <li class="list-inline-item"><a href="privacy-policy.html">PRIVACY POLICY</a></li>
+        <li class="list-inline-item"><a href="disclaimer.html">DISCLAIMER</a></li>
+        <li class="list-inline-item"><a href="frequently-asked-questions.html">FAQ</a></li>
+        <li class="list-inline-item">BLOG</li>
+			</ul>
+		</div>
+		<div class="col-md-12 col-sm-12">
+			<span>© 2016 Thoughtminerz Pvt Ltd. All Rights Reserved.</span><br><br>
+			<span>#123 Teachers colony, 1st block Koramangala 5th Main, Bangalore- 560034 | Telephone No. - 080-41120233</span><br><br>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>

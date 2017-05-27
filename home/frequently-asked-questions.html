@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<title>LendPaisa | Instant Personal Loan, EazyEMI, Pay Over Time</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="LendPaisa">
+  <meta name="keywords" content="HTML,CSS,JavaScript">
+  <meta name="author" content="dillbala">
+  <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.range.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link href='css/custom.css' rel='stylesheet' type='text/css'>
+  <link href="css/jquery.range.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="js/custom.js"></script>
+</head>
+<body id="scroll-style" style="background-color:#fff">
+  <div class="click-overlay"></div>
+<div class="container-fluid">
+<!--  <div class="top-header">
+    <div class="container">
+
+    </div>
+  </div> -->
+  <div class="calculator">
+    <img class="img-responsive" id="calculator" src="images/calculator.png">
+     <div class="home-calculator">
+      <div class="price-box-1">
+          <p id="close" style="color:#fff">X</p>
+          <h4>AMOUNT</h4><br />
+          <input class="slider-amount" id="slider-amount" type="hidden" value="100"/><br>
+          <h4>DAYS</h4><br />
+          <input class="slider-days" id="slider-days" type="hidden" value="7"/><br><br>
+          <p class="calculation">Borrowing : Rs.<span id="amount"></span> + interest : Rs.<span id="interest"><span></p>
+          <h3>Total Amount : Rs. <span id="total_amount">0.00</span></h3><br>
+          <div class="text-center"><button type="submit" class="btn btn-success btn-lg">GET LOAN</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header">
+    <div class="container">
+      <nav>
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-4 button">
+            <a class="btn-open" href="#"></a>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-4 logo">
+            <a href="index.html"><img src="logo.png" height="50px"></a>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-4 sign">
+            <a href=""><span>SIGN IN </span><i class="fa fa-lock headerLockIcon"></i></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+<div class="overlay">
+<div class="wrap">
+  <ul class="wrap-nav">
+        <li><a href="index.html" class="active"><i class="fa fa-home" aria-hidden="true"></i>  Home</a></li>
+        <li><a href="how_it_works.html"><i class="fa fa-info-circle" aria-hidden="true"></i>  How it Works</a></li>
+        <li><a href="security.html"><i class="fa fa-key" aria-hidden="true"></i>  Security</a></li>
+        <!-- <li><a href="lendpaisa_cashless.html"><i class="fa fa-money" aria-hidden="true"></i>  LendPaisa Cashless</a></li> -->
+        <!-- <li><a href="repay_anytime.html"><i class="fa fa-credit-card" aria-hidden="true"></i>  Repay Anytime</a></li> -->
+        <li><a href="help_center.html"><i class="fa fa-phone-square" aria-hidden="true"></i>  Help Center</a></li>
+        <li><a href="about_us.html"><i class="fa fa-mobile" aria-hidden="true"></i>  About Us</a></li>
+    </ul>
+</div>
+</div>
+<div class="container">
+    <div class="headings">
+      <h4><u>FAQ</u></h4>
+    </div>
+    <div class="row">
+        <div class="col-sm-3"  id="faq-page" style="padding-right:0px;">
+            <a href="#" class="nav-tabs-dropdown btn btn-block btn-primary">Tabs</a>
+            <ul id="nav-tabs-wrapper" class="nav nav-tabs nav-pills nav-stacked">
+              <li class="active"><a href="#vtab1" data-toggle="tab">Basics</a></li>
+              <li><a href="#vtab2" data-toggle="tab">Documents required</a></li>
+              <li><a href="#vtab3" data-toggle="tab">Application Process</a></li>
+              <li><a href="#vtab4" data-toggle="tab">Repayment Process</a></li>
+              <li><a href="#vtab5" data-toggle="tab">Referrals</a></li>
+              <li><a href="#vtab6" data-toggle="tab">Unanswered Questions?</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9" style="border:1px solid #444;">
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="vtab1">
+                    <h4>1.1 What’s lendpaisa.com?</h4>
+                    <p>lendpaisa.com is a NBFC supporting young professionals come over their mid-month and month-end financial crisis. We provide unsecured (yes, we don’t need your gold!) loans for up to Rs. 100,000/- for up to 50 days. We use your social data to fill up most of your application form and sanction your loan based on your social score. With your few mobile clicks, we’ll sanction your loan within a few clock ticks.
+                    Loan is given by Ashish Securities Pvt Ltd (a NBFC registered with RBI)</p><br>
+                    <h4>1.2 Am I eligible?</h4>
+                    <p>Oh we really hope so! If you are a salaried Indian citizen, over 21 years of age with a minimum take home monthly salary of Rs. 20,000/-, you can get your loan sanctioned in minutes. It is as simple as cooking noodles! Download our app and get some money right away!</p><br>
+                    <h4>1.3 Can I apply from my city?</h4>
+                    <p>We are currently operational only in Pune, Chennai, Hyderabad, Mumbai,Delhi,Ghaziabad, Faridabad,Gurugram,Noida and Bangalore.We are stretching our wings and flying to more cities soon. Key in your details and we’ll greet you at your city soon!</p><br>
+                    <h4>1.4 What social data is required and why?</h4>
+                    <p>Login with your Facebook and LinkedIn accounts in the lendpaisa app from your Android and IOS mobile phones. Windows users, key in your details and we’ll buzz you when we reach your stores!We need your social data to build your ‘Social Worth Score’ which determines your loan amount.</p><br>
+                    <h4>1.5 My LinkedIn/Facebook is not updated, does it impact my prospects?</h4>
+                    <p>Your Social Worth score best reflects YOU when all your profile details are updated. Furthermore, since we assist you by auto populating all the possible fields from your social media data, a non-updated profile would require more efforts from your side and lower loans from our side. So try and update your LinkedIn and Facebook accounts before applying.</p><br>
+                    <h4>1.6 What are the terms & condition/How does lendpaisa protect my information?</h4>
+                    <p>We are a new age NBFC with fair practices and transparent pricing. We would appreciate if you could spare a few minutes to read our Terms and Conditions and to reach out to us should you require any assistance!Your data is our biggest secret. We will not let anyone steal it nor will we let anyone buy it! Do you still want to read more??? Click here!</p><br>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="vtab2">
+                    <h4>2.1 ID Proofs and Bank Documents required and why?</h4>
+                    <p> We care about YOU and the environment! We do not require any original documents or any photocopies.</p>
+                    <ul>
+                      <li>PAN card</li>
+                      <li>Passport/Aadhaar card/Driver’s license</li>
+                      <li>Cancelled cheque leaf of your salary bank account</li>
+                      <li>Salary account bank statement of the last 3 completed calendar months We are a NBFC registered with the RBI. To assess your application and to comply with RBI norms we require these details.</li>
+                    </ul><br>
+                    <h4>2.2 Why should I only submit images of an original ID or document?</h4>
+                    <p>Taking photos of photos/photocopies could take our machines and employees more time to read your data. Remember studying from photocopies photocopied notes hurt your eyes on the eve of your exams! We love you as we love our employees and we can’t hurt their eyes!</p><br>
+                    <h4>2.3 Why should I provide details only of my Salary Bank Account?</h4>
+                    <p>We need your salary bank account statements to validate your salary data and to assist you with repayment dates close to your salary date so that you may never have to default your repayment.</p><br>
+                    <h4>2.4 What should I ensure while uploading documents?</h4>
+                    <p>Please make sure that your images are</p>
+                    <ul>
+                      <li>Complete</li>
+                      <li>Adequately zoomed</li>
+                      <li>Not blurry and</li>
+                      <li>Taken with good lighting</li>
+                    </ul>
+                    <p>Additionally, for bank statements, please note that the only acceptable formats are:</p><br>
+                    <ul>
+                      <li>Screenshots of full pages of your PDF bank statement</li>
+                      <li>Photograph of full pages of your PDF bank statement</li>
+                      <li>Upload of PDF Salary bank account statements</li>
+                    </ul><br>
+                    <h4>2.5 In what formats can I upload my documents?</h4>
+                    <p>You can upload your documents in JPEG or PNG formats. Bank statements may be uploaded in PDF format as well. If your PDF bank statement is password protected, please share your password as well and we will keep all your data safe and secure!</p><br>
+                    <h4>2.6 My files take too long to upload. What’s wrong?</h4>
+                    <p>We compress the files you upload so that you do not have to wait. If your uploads still take considerable time, please check your internet settings. If trouble still persists, get in touch with us. Call us on 020 6622 0100, Monday to Friday (10am -6pm), Saturday(10am-3pm), or e-mail us at Help@lendpaisa.com.</p><br>
+                    <h4>2.7 Why have I been asked to provide additional details?</h4>
+                    <p>We are a new age and innovative company using new age technology. Our machines learn well and are super adaptive. But in very rare instances, our machines might require additional data to assess your application. In such scenarios, we will seek minimal additional data.</p><br>
+                </div>
+                <div role="tabpanel" class="tab-pane fade in" id="vtab3">
+                    <h4>3.1 What is the minimum and maximum loan amount?</h4>
+                    <p>You can borrow in multiples of Rs. 1,000 from Rs. 8,000/- to Rs. 100,000/-.</p><br>
+                    <h4>3.2 What is the minimum and maximum loan period /How is the repayment date determined/Why don’t I see all the dates in the repayment date option?</h4>
+                    <p>You can apply for loans ranging 7 to 50 days. We would like to ensure that you avoid defaulting your repayment and lowering your score. Hence your options to choose a repayment date would be limited to a few working days on/after your salary date.</p><br>
+                    <p>Since banks do not permit repayments on bank holidays, your repayment dates list will not include bank holidays. However, if you have money in your account and are ready to repay your loan you can do so at no additional cost! Also, you will pay interest only up to the day on which you repay.</p><br>
+                    <h4>3.3 How many loans can I take at a time?</h4>
+                    <p>We sanction the highest amount you would be able to comfortably repay each month. Hence you can take only one loan at a time.</p><br>
+                    <h4>3.4 Can I borrow more money on my existing loan/Can I Top-Up my loan account?</h4>
+                    <p>If you already have a loan outstanding, but need some extra money, you can borrow more money while keeping the same repayment date, if you did not borrow all the money sanctioned.</p><br>
+                    <h4>3.5 How many loans can I take in a year/Why should I wait between two loans for 5 days?</h4>
+                    <p>Though we are a new age banking company, our vision and perspectives are shaped from socially responsible business leaders.</p><br>
+                    <p>While we wish to help you with money as and when you need it, we strive not to make YOU addicted to loans. Hence, you may apply for as many loans as you require per year. Further, between the repayment date of your current loan and the application date of your next loan, there should be a minimum gap of 5 days.</p><br>
+                    <h4>3.6 How much is a loan going to cost me?</h4>
+                    <p>You do not have to pay any fee upfront! Isn’t that good news to start with…? Use the sliders on our app to see the amount real time. If you still haven’t downloaded the app yet, you can play with the sliders here.</p><br>
+                    <p>In addition to interest, the fees and charges include:</p><br>
+                    <ul>
+                      <li>Processing Fees:<br>Processing Fee for the Loan shall not exceed<br>
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>Loan Amount (Rs.)</th>
+                              <th>1st Loan (Rs.)</th>
+                              <th>2nd Loan (Rs.)</th>
+                              <th>Subsequent Loans (Rs.)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>10,000 to 30,000</td>
+                              <td>500</td>
+                              <td>300</td>
+                              <td>150</td>
+                            </tr>
+                            <tr>
+                              <td>30,001 to 60,000</td>
+                              <td>700</td>
+                              <td>400</td>
+                              <td>250</td>
+                            </tr>
+                            <tr>
+                              <td>60,001 to 1,00,000</td>
+                              <td>1.5% of the loan amount</td>
+                              <td>600</td>
+                              <td>300</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </li>
+                      <li>Late payment charges<br><p>In case of delay in payment of Amount Due, we will charge a late payment fee not exceeding 3% per month on the amount due, subject to minimum of Rs. 500.</p></li>
+                      <li>Repayment Instrument(s) mandate reject charge:<br><p>In the event, the repayment instrument(s) mandate registration is rejected, lendpaisa.com will charge rejection charges not exceeding Rs. 500/- per rejection.</p></li>
+                      <li>Charges for bouncing of the Repayment Instrument(s):<br><p>In case of default by reason of the Repayment Instrument(s) being dishonored, lendpaisa.com will charge Rs. 500/- per month / per default towards its dishonor.</p></li>
+                      <li>Prepayment Charges:<br><p>Not exceeding 2% of the Prepaid Amount. But rejoice! Currently we will not charge for prepayment.</p></li>
+                      <li>Stamp Duty:<br><p>Stamp duty – 0.1% of the sanction amount or Rs. 100, whichever is higher.</p></li>
+                      <li>Interest Charge<br><p>Our general interest rate is 2.5% p.m.</p></li>
+                    </ul><br>
+                    <h4>3.7 How can I apply for a loan/What is the application process/How much time will you take?</h4>
+                    <p>We are a new age company for the young Indians. Forget the monotonous lengthy boxed forms, the continuous follow up and the endless waiting your parents went through for their loans. With your social logins, you will hardly have to key in 5 data points, upload a few images and sign an agreement – all of which should not take you over a few minutes. At YOUR desired time we will come to your house/office to get your signature and we’ll transfer the money right away.
+                    From the second time you take a loan from us, money would reach your account in not more than a few minutes.
+                    While applying the first time you will go through these 5 steps:</p><br>
+                    <ul>
+                      <li>Quickly skim through the mostly pre-filled app pages, key in the minimal data left, and upload your bank statements. Quickly rehearse your moves for the night or pack your bags for a hell of a trip. In a few minutes your loan would be sanctioned.</li>
+                      <li>Once sanctioned, Choose the amount you would like to hit your bank account and upload few more images. Perfect your dance moves and ensure that you have packed everything.In minutes we will e-mail you your loan agreement and will ask you to confirm a time and place to sign your loan agreement (RBI needs this!).</li>
+                      <li>Once you confirm your availability, we will come running to you, within an hour or at the time you choose. You better dress up for the night or for your trip!</li>
+                      <li>Once our officer reaches your house/office, he will check an original ID proof (one that you submitted) and will get your signatures on some papers.</li>
+                      <li>Sit in your car and start your engine for one of the best moments of your life. We would have transferred the money to your bank account. The money would reach your account according to the time your bank takes!</li>
+                    </ul>
+                    <p>The whole process should not take more than a Business Days’ time to complete.</p><br>
+                    <h4>3.8 Why should I sign the agreement only at my residence/office?</h4>
+                    <p>To add to your comfort, to validate your address we’ll have to visit you at either your residence or office only.</p><br>
+                    <h4>3.9 Why should I show an original ID to the Early Salary Officer who visits me?</h4>
+                    <p>We’ll need to inspect the original ID to validate your identity and to ensure that fraudsters don’t harm an innocent citizen.</p><br>
+                    <h4>3.10  Should I be concerned about my safety as a stranger would visit my residence/office?</h4>
+                    <p>YOUR safety is our priority. Our lendpaisa officer would be sporting the lendpaisa uniform and will carry his ID card. Moreover our carefully hand-picked field officers have undergone stringent background checks and their movements are tracked the whole time by our machines! So bravely greet them with a smile while they smile at you!</p><br>
+                    <h4>3.11To which account will my loan be disbursed/Can I change the account to which I can get the money?</h4>
+                    <p>Your loan will be transferred to your salary bank account registered with us. We are sorry that we will not be able to transfer your money to a different bank account at the moment.</p><br>
+                    <h4>3.12  Can I apply for loans and get money on holidays?</h4>
+                    <p>We believe that by keeping our employees happy, we can keep YOU very happy. Accordingly, we do not work on Saturdays and bank holidays. However, if you have a loan sanctioned, you may be able to access it on Holidays too. Apply right away and get your loan sanctioned!</p><br>
+                    <p>Love our office policy? Check out our career section and join us. This way you can get both – cheaper loans and a rewarding career!</p>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="vtab4">
+                    <h4>4.1 How can I repay the loan?</h4>
+                    <p>Easy peasy! We use ECS/NACH (National Automated Clearing House) to take repayment automatically. On the repayment date, we will debit your bank account registered with us. Just make sure that you have enough money in your bank account on that day.</p><br>
+                    <h4>4.2 From which bank account will my money be deducted/Can I change the bank account from which my money will be deducted?</h4>
+                    <p>Your repayment amount (including all interest and charges) would be deducted only from your salary bank account registered with us. We currently do not have the option to change the bank account registered with us at the time of applying for the loan.</p><br>
+                    <h4>4.3 Can I Pre-Pay my loan/Will I be charged for repayment?</h4>
+                    <p>Rejoice! There is no pre-payment fee at the moment. You can pre-pay your loan any time before the repayment date through net banking. Tap the Repay button on the app. You will be charged only for the amount outstanding so by prepaying, you can save money! Please note that pre-payment is only possible before 2 bank business days from the repayment date. Post this date, we’ll use the ECS/NACH facility to take repayment automatically so that you do not have to worry.</p><br>
+                    <h4>4.4 Can I Pre-Pay using a credit card?</h4>
+                    <p>Sorry pal! As per RBI guidelines, you can’t pay your dues using a Credit Card.</p><br>
+                    <h4>4.5 Can I post pone my repayment date?</h4>
+                    <p>No you can’t! You have to repay in one shot.</p><br>
+                    <h4>4.6 Yikes! What if there isn’t enough money in my salary bank account on my repayment date?</h4>
+                    <p>We suggest that you call us and extend your repayment date. However, if your extension request is rejected, please pay us to the extent possible before 2 bank days from the repayment date to avoid maximum charges. This way we’ll charge you additional charges only on the unpaid portion.
+                    If your account is still short of funds on the day of repayment, then a late payment fees in addition to ECS bounce charges will be charged as per the schedule. You may also be charged additional interest for the delayed payment.</p><br>
+                    <h4>4.7 Is repayment through EMIs possible?</h4>
+                    <p>EMI option is currently not available. We’ll be launching the EMI facility very soon.</p><br>
+                    <h4>4.8 What happens if I do not repay on time? Does lendpaisa report to the Credit bureaus?</h4>
+                    <p>Yes, we are obligated to report our Loan, its history, the late payment and non-payment of dues to credit bureaus such as CIBIL and Equifax. This will impact your chances of getting banking products. By paying on time, your score improves and so does your chances of getting a credit card or any loan!!!</p><br>
+                    <h4>4.9 What happens if I have a complaint and I wish to escalate it?</h4>
+                    <p>Oh ho!We are sorry to see you in this situation. Our team would like to help you ASAP to put a smile back to your face.
+                      Write to our Complaints Management Cell, at Help@lendpaisa.com and we will get resolve your query in not more than 7 business days. If you are still not satisfied with the action, you can write to our Grievance Redressal Officer at admin@lendpaisa.com.Please do quote your Customer ID in all your interactions with us.</p><br>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="vtab5">
+                    <h4>5.1 Why should I refer a friend?</h4>
+                    <p>Because friends care and share! Moreover we give special incentives for referring friends to both you and your friend. As an inaugural offer, you will get Rs 200 off on your loan with each referral and your friend will get Rs 200 off on his/her first loan.</p><br>
+                    <h4>5.2 How can I get a promo code for my company?</h4>
+                    <p>We have tied up with many companies to facilitate the lendpaisa loans as an alternate to Salary Advance. If your company is not listed here, write to us on PR@lendpaisa.com with your company name in the subject line to become a preferred company with us.</p><br>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="vtab6">
+                    <p>Call us on +918030077553; Monday to Friday(10am-6p.m) Saturday (10am to 3pm) or e-mail us at admin@lendpaisa.com</p><br>
+                </div>
+            </div>
+        </div>
+      </div>
+</div>
+<div class="footer-section">
+  <div class="row">
+    <div class="col-md-6 col-sm-12 grid">
+      <span class="text">FIND US ON</span>
+      <ul class="list-inline">
+        <li class="list-inline-item"><i class="fa fa-facebook" aria-hidden="true"></i></li>
+        <li class="list-inline-item"><i class="fa fa-linkedin" aria-hidden="true"></i></i></li>
+        <li class="list-inline-item"><i class="fa fa-twitter" aria-hidden="true"></i></li>
+        <li class="list-inline-item"><i class="fa fa-google-plus" aria-hidden="true"></i></li>
+      </ul>
+    </div>
+    <div class="col-md-6 grid-1 col-sm-12">
+      <span class="text">SECURED BY 256 BIT SSL SECURITY Learn more</span>
+      <ul class="list-inline">
+        <li class="list-inline-item"><i class="fa fa-cc-amex" aria-hidden="true"></i></li>
+        <li class="list-inline-item"><i class="fa fa-cc-paypal" aria-hidden="true"></i></i></li>
+        <li class="list-inline-item"><i class="fa fa-cc-visa" aria-hidden="true"></i></li>
+        <li class="list-inline-item"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></li>
+      </ul>
+    </div>
+    </div>
+  <div class="row" style="background-color:#fff">
+    <div class="col-md-12 col-sm-12">
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="terms-and-conditions.html">TERMS AND CONDITIONS</a></li>
+        <li class="list-inline-item"><a href="privacy-policy.html">PRIVACY POLICY</a></li>
+        <li class="list-inline-item"><a href="disclaimer.html">DISCLAIMER</a></li>
+        <li class="list-inline-item"><a href="frequently-asked-questions.html">FAQ</a></li>
+        <li class="list-inline-item">BLOG</li>
+      </ul>
+    </div>
+    <div class="col-md-12 col-sm-12">
+      <span>© 2016 Thoughtminerz Pvt Ltd. All Rights Reserved.</span><br><br>
+      <span>#123 Teachers colony, 1st block Koramangala 5th Main, Bangalore- 560034 | Telephone No. - 080-41120233</span><br><br>
+    </div>
+  </div>
+</div>
+</div>
+
+  <style type="text/css">
+      .nav-tabs-dropdown {
+  display: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.nav-tabs-dropdown:before {
+  content: "\e114";
+  font-family: 'Glyphicons Halflings';
+  position: absolute;
+  right: 30px;
+}
+.nav-tabs>li {
+     margin-bottom: 0px; 
+     text-align: left; 
+     width: 100% !important; 
+}
+.nav-tabs>li:nth-child(3) {
+    margin-left: 0px !important;
+}
+.nav-tabs>li{
+  border: 1px solid #444;
+}
+.nav-tabs li.active{
+  border-left: 2px solid #138808;
+  border-bottom: 1px solid #444;
+  border-right: 0px;
+  border-top: 1px solid #444;
+}
+@media screen and (min-width: 769px) {
+  #nav-tabs-wrapper {
+    display: block!important;
+  }
+}
+@media screen and (max-width: 768px) {
+    .nav-tabs-dropdown {
+        display: block;
+    }
+    #nav-tabs-wrapper {
+        display: none;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        text-align: center;
+    }
+   .nav-tabs-horizontal {
+        min-height: 20px;
+        padding: 19px;
+        margin-bottom: 20px;
+        background-color: #f5f5f5;
+        border: 1px solid #e3e3e3;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+   }
+    .nav-tabs-horizontal  > li {
+        float: none;
+    }
+    .nav-tabs-horizontal  > li + li {
+        margin-left: 2px;
+    }
+    .nav-tabs-horizontal > li,
+    .nav-tabs-horizontal > li > a {
+        background: transparent;
+        width: 100%;
+    } 
+    .nav-tabs-horizontal  > li > a {
+        border-radius: 4px;
+    }
+    .nav-tabs-horizontal  > li.active > a,
+    .nav-tabs-horizontal  > li.active > a:hover,
+    .nav-tabs-horizontal  > li.active > a:focus {
+        color: #ffffff;
+        background-color: #428bca;
+    }
+}
+
+  </style>
+</body>
+</html>

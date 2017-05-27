@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<title>LendPaisa | Instant Personal Loan, EazyEMI, Pay Over Time</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="LendPaisa">
+  <meta name="keywords" content="HTML,CSS,JavaScript">
+  <meta name="author" content="dillbala">
+  <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.range.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link href='css/custom.css' rel='stylesheet' type='text/css'>
+  <link href="css/jquery.range.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="js/custom.js"></script>
+</head>
+<body id="scroll-style" style="background-color:#fff">
+  <div class="click-overlay"></div>
+<div class="container-fluid">
+<!--  <div class="top-header">
+    <div class="container">
+
+    </div>
+  </div> -->
+  <div class="calculator">
+    <img class="img-responsive" id="calculator" src="images/calculator.png">
+     <div class="home-calculator">
+      <div class="price-box-1">
+          <p id="close" style="color:#fff">X</p>
+          <h4>AMOUNT</h4><br />
+          <input class="slider-amount" id="slider-amount" type="hidden" value="100"/><br>
+          <h4>DAYS</h4><br />
+          <input class="slider-days" id="slider-days" type="hidden" value="7"/><br><br>
+          <p class="calculation">Borrowing : Rs.<span id="amount"></span> + interest : Rs.<span id="interest"><span></p>
+          <h3>Total Amount : Rs. <span id="total_amount">0.00</span></h3><br>
+          <div class="text-center"><button type="submit" class="btn btn-success btn-lg">GET LOAN</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header">
+    <div class="container">
+      <nav>
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-4 button">
+            <a class="btn-open" href="#"></a>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-4 logo">
+            <a href="index.html"><img src="logo.png" height="50px"></a>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-4 sign">
+            <a href=""><span>SIGN IN </span><i class="fa fa-lock headerLockIcon"></i></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+<div class="overlay">
+<div class="wrap">
+  <ul class="wrap-nav">
+        <li><a href="index.html" class="active"><i class="fa fa-home" aria-hidden="true"></i>  Home</a></li>
+        <li><a href="how_it_works.html"><i class="fa fa-info-circle" aria-hidden="true"></i>  How it Works</a></li>
+        <li><a href="security.html"><i class="fa fa-key" aria-hidden="true"></i>  Security</a></li>
+        <!-- <li><a href="lendpaisa_cashless.html"><i class="fa fa-money" aria-hidden="true"></i>  LendPaisa Cashless</a></li> -->
+        <!-- <li><a href="repay_anytime.html"><i class="fa fa-credit-card" aria-hidden="true"></i>  Repay Anytime</a></li> -->
+        <li><a href="help_center.html"><i class="fa fa-phone-square" aria-hidden="true"></i>  Help Center</a></li>
+        <li><a href="about_us.html"><i class="fa fa-mobile" aria-hidden="true"></i>  About Us</a></li>
+    </ul>
+</div>
+</div>
+<div class="container">
+  <div class="headings">
+      <h4><u>Terms and Conditions</u></h4>
+   </div>
+   <div class="td-content">
+      <h2>Terms and Conditions</h2>
+<p>PLEASE READ THESE TERMS OF SERVICE CAREFULLY. BY ACCESSING THE lendpaisa PORTAL OR USING THE lendpaisa SERVICE, YOU AGREE TO BE BOUND BY THE (1) lendpaisa TERMS OF SERVICE, AND (2) lendpaisa PRIVACY POLICY. IF YOU DO NOT AGREE WITH THESE TERMS, PLEASE DO NOT ACCESS THE lendpaisa PORTAL OR USE THE lendpaisa SERVICE. THE HEADINGS CONTAINED IN THIS AGREEMENT ARE FOR REFERENCE PURPOSES ONLY. YOU SHOULD PRINT A COPY OF THIS AGREEMENT FOR YOUR RECORDS.</p>
+<ol type="1">
+  <li>What are you agreeing to?
+    <ol type="a">
+      <li>The Parties to this Agreement</li>
+      <p>These terms of service describe a contractual relationship ("Agreement") between you ("you" or "your") and Garage Preneurs Internet Pvt. Ltd. ("lendpaisa," "we," "us," "our"), regarding your use of this web site www.lendpaisa.in and a mobile application (collectively "the Portal"), your use of the "Buy with lendpaisa" service as described below, and your access to your lendpaisa account information and service through the Portal (together, the "lendpaisa Services" or "Services").</p>
+      <li>Who are We?</li>
+      <p>"Buy with lendpaisa" is a closed-end installment loan product offered by its authorised financing partners through lendpaisa's technology platform, which allows you to buy goods or services (“Products”) offered by online merchants and e-wallets with whom lendpaisa partners ("Merchants").</p>
+      <li>Changes to this Agreement</li>
+      <p>lendpaisa may unilaterally decide to change this Agreement from time to time, provided, however, that such changes will not impose additional obligations on you with respect to actions you took before the change became effective unless you specifically agree to such changes (for example by clicking on the "Pay Now" button below the updated agreement). If this Agreement is changed, lendpaisa will give notice to users by posting a new version of this Agreement on the Portal 7 days before that version becomes effective. If lendpaisa makes any changes to this Agreement that it deems to be material, lendpaisa will make a reasonable effort to inform you of such changes, but it is your responsibility to review the Agreement posted to the Portal from time to time to see if it has been changed.</p>
+      <li>Representations, Warranties and Undertakings</li>
+      <p>(a) You represent that you are above 16 years of age and this Agreement is a legal, valid and binding obligation on you, enforceable against you in accordance with its terms.</p>
+      <p>(b) You agree to use the Services only for purposes that are permitted by: (i) this Agreement; and, (ii) any applicable law.</p>
+      <p>(c) You acknowledge and agree that lendpaisa is entitled to remove any / all the information on the Portal that is in contravention of the provisions of this Agreement.</p>
+      <p>(d) You understand that lendpaisa does not provide any warranties for its Services and shall not be made liable for any claims made by you or any third party, and in this regard, you undertake to accept and be solely liable for the Services availed by you from lendpaisa. You further undertake to indemnify and hold harmless lendpaisa, its affiliates and their respective directors, officers, employees, agents and representatives against all damages suffered or losses incurred by lendpaisa arising due to any act, omission or claim initiated by you or any third party in relation to the Services availed by the you.</p>
+      <li>Enquiry</li>
+      <p>You hereby authorize lendpaisa, on behalf of the Financing Partner, to make any enquiries with any other finance company / bank / registered credit bureau regarding your credit history with them.</p>
+      <li>DND</li>
+      <p>You hereby express your intent to know through telephonic calls, or SMS on your mobile number mentioned in the application form as well as in this undertaking, or through any other communication mode, various lendpaisa loan offer schemes or loan promotional schemes or any other promotional schemes and hereby authorize lendpaisa and its employee, agent, associate to do so. You confirm that laws in relation to the unsolicited communication referred in “National Do Not Call Registry” (the “NDNC Registry”) as laid down by Telecom Regulatory Authority of India will not be applicable for such communication/calls/ SMS received from lendpaisa, its employees, agents and/or associates.</p>
+    </ol>
+  </li>
+  <li>How lendpaisa will serve you?
+    <ol type="a">
+      <li>The Service
+      <p>Subject to risk assessment conducted by lendpaisa on you, lendpaisa shall choose a suitable financing partner for you (“Financing Partner”) and facilitate execution of the loan agreement between the Financing Partner and you so that you may purchase the Products utilising such funds. While lendpaisa shall make reasonable efforts to ensure that you find a suitable financing partner, lendpaisa does not guarantee the same to you.</p>
+      <p>If you agree to use "Buy with lendpaisa, you may be required to, if applicable, pay a token amount as down payment to lendpaisa at the time of purchase of the Product, along with a nominal service charge (details provided below). The Financing Partner will fund the remaining cost owed to the Merchant in exchange for your promise to repay the same amount plus a finance charge as determined by the Financing Partner based on your creditworthiness. A approved limit shall be sanctioned to you by the Financing Partner, details of which shall be available on your lendpaisa account. Subject to this credit limit, you may be permitted to obtain disbursements from the Financing Partner to buy the Products, by confirming the disbursal amount and other terms and conditions of the disbursal (as determined by the Financing Partner), on the Portal. In cases where the partner website is running an interest free offer, the finance charges will be borne by the partner website and will not be paid by you.</p>
+      <p>lendpaisa shall provide to you the following facilities (“Services”):</p>
+      <p>(a) to facilitate the agreement between the Financing Partner and you with regard to obtaining the approved limit for you to purchase Products from the Merchants (“Loan Agreement”);</p>
+      <p>(b) to make the payment on your behalf to the Merchant for the Product purchased using the down payment made by you (if applicable) and the funds offered by the Financing Partner as loan;</p>
+      <p>(c) to collect equated monthly instalment (as determined by the Financing Partner) from you in order to forward it to the Financing Partner in relation to the loan you have obtained;</p>
+      <p>(d) to create and maintain your accounts in relation to the Products purchased, loan availed and interest and principal repayments for such loan, on the Portal.</p>
+      <p>lendpaisa is the technology and operating partner to its financing partners. As a service provider, lendpaisa is fully responsible for communicating, transacting and processing on behalf of its financing partners. At no point, lendpaisa is representing itself as a lending company. Please refer to your Loan Agreement for details on your contract with the Financing Partner.</p>
+      <p>lendpaisa reserves the right to add new functionalities, remove existing functionalities or modify existing functionalities to its Services as and when it deems fit and at its sole discretion.</p>
+      </li>
+      <li>List of Authorised Financing Partners.
+        <p>lendpaisa has tied up with financial partners to ensure you get the best financing options. Please refer below for our complete list of financing partners</p>
+        <ul><li>CHAITANYA RURAL INTERMEDIATION DEVELOPMENT SERVICES PRIVATE LIMITED</li></ul>
+      </li>
+      <li>Cancelling Transactions
+        <p>Loan approval process is as per the discretion of the Financing Partner. lendpaisa may choose not to provide Service to you or to specific Merchant sites at any time (even after execution of the loan agreement with a financing partner) for any reason, including but not limited to, your creditworthiness, your history of transactions on our Portal, the Merchant's account history or any other reason. lendpaisa may cancel transactions at any time before a Merchant delivers any goods or services if you violate any term of this Agreement.</p>
+      </li>
+      <li>Collecting Information About You
+        <p>The Privacy Policy as provided in https://lendpaisa.in/privacy shall be treated as part of this Agreement. You undertake that you shall carefully read through the Privacy Policy and shall strictly comply with the terms of the Privacy Policy.</p>
+        <p>By using the Portal or lendpaisa Services, you authorize lendpaisa, directly or through third parties, to make any inquiries we consider necessary to validate your identity and to collect information about you in accordance with our Privacy Policy. This may include asking you for further information that will allow us to reasonably identify you, requiring you to take steps to confirm ownership of your email address or financial instruments, or verifying your information against third party databases or through other sources. We may also ask you for identifying documents to help us validate your identity. lendpaisa reserves the right to close, suspend, or limit access to your account and/or the Services in the event we are unable to obtain or verify this information.</p>
+        <p>You agree to provide unconditional and absolute consent to lendpaisa to use and share the information provided by you in relation to the Services. lendpaisa shall take all reasonable steps to ensure that the information received from you is secure, and is accessible only to the relevant persons.</p>
+        <p>lendpaisa shall not be liable in case you breach any terms or conditions provided under the Privacy Policy. You shall also be liable to indemnify and hold harmless lendpaisa, its affiliates and their respective directors, officers, employees, agents and representatives to the extent of any and all damages suffered or incurred by lendpaisa in relation to such breach.</p>
+      </li>
+      <li>Credit Investigation and Reporting
+        <p>By using the lendpaisa Service, you give lendpaisa, on behalf of the Financial Partner, permission to investigate your credit record and obtain your credit report in connection with the review of your application for credit. A credit report may also be requested in connection with a credit extension, credit limit request, account renewal, account collection action or dispute investigation. You understand that lendpaisa may report negative information (such as late payments, missed payments, or other defaults) about your account to credit reporting agencies.</p>
+      </li>
+      <li>Collection.
+        <p>You agree to allow lendpaisa, on behalf of the Financing Partner, to send you payment reminders from time-to- time. You also agree that if you fail to pay an amount owed to lendpaisa or the Financing Partner pursuant to this Agreement or the Loan Agreement, lendpaisa may engage in collection efforts to recover such amounts from you. These collection efforts may involve, inter alia, contacting either you directly or any other contact details provided by you at the time of joining lendpaisa, submitting your information to a collection agency, or taking legal action. Failure to pay may affect your credit score.</p>
+      </li>
+      <li>Communication & Notification.
+        <p><pre>You agree that lendpaisa may provide you communications about your account and the lendpaisa Service electronically or through phone calls or in writing. Standard mobile, message, or data rates may apply and you are responsible for any such fees. lendpaisa reserves the right to close your account and immediately collect all due amounts if you withdraw your consent to receive electronic or other communications or if you revoke access to any third party site on which the lendpaisa Service relies (e.g., Facebook, Twitter, etc.) or if any such service should revoke or cancel your account on that site. Any electronic communications will be considered to be received by you within 24 hours of the time we email it to you or otherwise send it to your attention (such as via sms or other online notification). We may assume you have received any communications sent to you by postal mail 3 business days after we send it.
+        If we need to contact you to service your account, you give direct consent to us and our permitted assigns to communicate with you in any way, such as calling, texting, or e-mail via:
+        (a) a mobile phone or landline you provide to us, use to contact us, or at which we believe we can reach you (even if it is not yours),
+        (b) any email address you provide to us or one of our Merchants,
+        (c) automated dialer systems and automatic telephone dialing systems,
+        (d) pre-recorded or artificial voice messages and other forms of communications.
+        You also agree that these communications are not unsolicited (do not follow DND system) for purposes of any state or federal law, and you understand that this may result in additional mobile, text message, or data charges.</pre></p>      
+      </li>
+      <li>Working with Third Parties.
+        <p>If you grant express permission to a third party to take specific actions on your behalf, or access particular information about your account, either through your use of the third party's product or service or through your lendpaisa account, you acknowledge that lendpaisa may disclose the information about your account that is authorized by you to this third party. You also acknowledge that granting permission to a third party to take specific actions on your behalf does not relieve you of any of your responsibilities under this Agreement. Further, you acknowledge and agree that you will not hold lendpaisa responsible for, and will indemnify lendpaisa from, any liability arising from the actions or in actions of this third party in connection with the permissions you grant.</p>
+      </li>
+    </ol>
+  </li>
+  <li>Your use of lendpaisa?
+    <ol type="a">
+      <li>Agreement to Provide Accurate Information.
+        <p>When you provide information to lendpaisa, you agree to provide only true, accurate, current and complete information about yourself and you agree not to misrepresent your identity or your account information. You further agree to keep your account information up to date and accurate.</p>
+      </li>
+      <li>Delays in Processing.
+        <p>In some cases when you attempt to use the lendpaisa Services to make a purchase, the transaction may be held as pending or be otherwise delayed for processing and confirmation by either lendpaisa or the Merchant and can be cancelled at any time until it is confirmed by lendpaisa.</p>
+      </li>
+      <li>User Responsible for Fees.
+        <p>If you use the lendpaisa Services, you shall be levied non-refundable service charges, details of which are available here service charges. You are also responsible for any fees or other amounts that your phone service provider charges, such as fees for SMS, data services, and any other fees that your phone service provider may charge.</p>
+      </li>
+      <li>Remittance and Repayment.
+        <p> <pre>In order to purchase Products (either on the Portal or on the designated Merchant portal), you may be required to, if applicable, pay a nominal amount as down payment to lendpaisa vide the below mentioned acceptable methods of payment at the time of placing the order. The remaining cost of the Products (after making the down payment, if applicable) shall be financed by the Financing Partner in accordance with the Loan Agreement.
+
+        You may use one of the acceptable methods of payment to make automatic monthly account payment. Currently acceptable methods of payment are:
+        (a) Debit Card - Payments made by debit card will be subject to the terms and conditions established by the debit card issuer. If charges cannot be processed through your debit card, or if your bank draft or electronic funds transfer is returned for insufficient funds, you will be responsible for any fees incurred and lendpaisa will have no liability with respect thereto.
+        (b) ECS / NACH Transfer - You may pay your account balance by authorizing an Electronic Clearing House (ACH) transaction from your bank account.
+        (c) NEFT /TPT Transfer</pre></p>
+      </li>
+      <li>Access to Your Account.
+        <p>You are responsible for maintaining the secrecy of the login credentials to your lendpaisa account. You agree to establish reasonable security procedures and controls to limit access to your password or other identifying information to authorized individuals, which includes choosing passwords and other credentials in a manner that will protect the security of your information. Your credentials include your username and password to your lendpaisa account and to any third party account you have used to login to your lendpaisa account. You are also responsible for maintaining the accuracy of the information in your lendpaisa account.
+        </p>    
+      </li>
+      <li>Portal Content.
+        <p> <pre>The information on the Portal is for information purposes only. It is believed to be reliable, but lendpaisa does not make any promises as to its completeness, timeliness or accuracy. The information and materials contained in the Portal, and in this Agreement, are subject to change notice of which shall be at the sole discretion of lendpaisa.
+
+lendpaisa shall provide to you basic support for the Services and shall use commercially reasonable efforts to make the Services available 24 hours a day, 7 days a week, except for (i) planned downtime (of which lendpaisa shall give at least 4 hours notice), or (ii) any unavailability caused by circumstances beyond lendpaisa’s reasonable control. Call centre support services shall be provided from 8 a.m. to 8 p.m., 7 days a week (excluding public holidays).
+
+Access to the Services may from time to time be unavailable, delayed, limited or slowed due to, among other things:
+
+(a) servers, networks, hardware failure (including your own computer), telecommunication lines and connections, and other electronic and mechanical equipment;
+(b) software failure, including among other things, bugs, errors, viruses, configuration problems, incompatibility of systems, utilities or applications, the operation of firewalls or screening programs, unreadable codes, or irregularities within particular documents or other content;
+(c) overload of system capacities;
+(d) damage caused by severe weather, earthquakes, wars, insurrection, riots, civil commotion, act of God, accident, fire, water damage, explosion, mechanical breakdown or natural disasters;
+(e) interruption (whether partial or total) of power supplies or other utility of service; strike or other stoppage (whether partial or total) of labor;
+(f) governmental or regulatory restrictions, exchange rulings, court or tribunal orders or other human intervention; or
+(g) any other cause (whether similar or dissimilar to any of the foregoing) whatsoever beyond the control of lendpaisa.</pre> </p>
+      </li>
+      <li>Links to Other Websites.
+        <p>Links to non- lendpaisa websites are provided solely as pointers to information on topics that may be useful to users of the Services, and lendpaisa has no control over the content on such non-lendpaisa websites. lendpaisa makes no warranties concerning the content of such websites, including the accuracy, completeness, reliability of said websites, nor does lendpaisa warrant that such website or content is free from any claims of copyright, trademark or other infringement of the rights of third parties or that such site or content is devoid of viruses or other contamination. If you choose to follow a link to a website not controlled by lendpaisa, you must do so at your own risk. lendpaisa does not guarantee the authenticity of documents on the Internet. Links to non-lendpaisa websites do not imply any endorsement of or responsibility for the opinions, ideas, products, information or services offered at such sites, or any representation regarding the content at such websites.</p>
+      </li>
+      <li>Closing Your Account.
+        <p>You may close your account at any time by contacting us at help@lendpaisa.in. Upon account closure, we will cancel any pending transactions unless otherwise legally prohibited. If you owe any payment to lendpaisa or the Financing Partner, lendpaisa will not close your account until that payment has been made, but we may limit your ability to make additional transactions using your account. You may not close your account to evade an investigation. You will remain liable for all obligations related to your account even after the account is closed. lendpaisa will retain your information in accordance with our Privacy Policy.</p>
+        <p>Without prejudice to any other rights or remedies which it may have, lendpaisa shall have the right to terminate your access or usage rights to the Services, for any reason whatsoever (including but not limited to non-compliance with any applicable laws or this Agreement), at any time without any prior notice to you.</p>
+      </li>
+      <li>Dormant Accounts.
+        <p>lendpaisa may close your account if you do not log in to the Portal or use the lendpaisa Services for 2 or more years. lendpaisa will retain your information in accordance with this Agreement and our Privacy Policy.</p>
+      </li>
+    </ol>
+  </li>
+</ol>
+   </div>
+</div>
+<div class="footer-section">
+  <div class="row">
+    <div class="col-md-6 col-sm-12 grid">
+      <span class="text">FIND US ON</span>
+      <ul class="list-inline">
+        <li class="list-inline-item"><i class="fa fa-facebook" aria-hidden="true"></i></li>
+        <li class="list-inline-item"><i class="fa fa-linkedin" aria-hidden="true"></i></i></li>
+        <li class="list-inline-item"><i class="fa fa-twitter" aria-hidden="true"></i></li>
+        <li class="list-inline-item"><i class="fa fa-google-plus" aria-hidden="true"></i></li>
+      </ul>
+    </div>
+    <div class="col-md-6 grid-1 col-sm-12">
+      <span class="text">SECURED BY 256 BIT SSL SECURITY Learn more</span>
+      <ul class="list-inline">
+        <li class="list-inline-item"><i class="fa fa-cc-amex" aria-hidden="true"></i></li>
+        <li class="list-inline-item"><i class="fa fa-cc-paypal" aria-hidden="true"></i></i></li>
+        <li class="list-inline-item"><i class="fa fa-cc-visa" aria-hidden="true"></i></li>
+        <li class="list-inline-item"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></li>
+      </ul>
+    </div>
+    </div>
+  <div class="row" style="background-color:#fff">
+    <div class="col-md-12 col-sm-12">
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="terms-and-conditions.html">TERMS AND CONDITIONS</a></li>
+        <li class="list-inline-item"><a href="privacy-policy.html">PRIVACY POLICY</a></li>
+        <li class="list-inline-item"><a href="disclaimer.html">DISCLAIMER</a></li>
+        <li class="list-inline-item"><a href="frequently-asked-questions.html">FAQ</a></li>
+        <li class="list-inline-item">BLOG</li>
+      </ul>
+    </div>
+    <div class="col-md-12 col-sm-12">
+      <span>© 2016 Thoughtminerz Pvt Ltd. All Rights Reserved.</span><br><br>
+      <span>#123 Teachers colony, 1st block Koramangala 5th Main, Bangalore- 560034 | Telephone No. - 080-41120233</span><br><br>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
