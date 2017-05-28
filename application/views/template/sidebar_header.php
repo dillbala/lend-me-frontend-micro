@@ -8,7 +8,8 @@
 <link rel="stylesheet" href="<?php echo base_url().'assets/css/bootstrap.min.css';?>">
 
 <link href="<?php echo base_url().'assets/css/navbar-fixed-side.css';?>" rel="stylesheet" />
-
+<link rel='shortcut icon' type='image/x-icon' href='<?php echo base_url().'assets/images/favicon.ico';?>' />
+<title>LendPaisa | Instant Personal Loan, EazyEMI, Pay Over Time</title>
 
 <script type="text/javascript">
     // if Google is down, it looks to local file...
@@ -17,7 +18,16 @@
     }
 </script>
 
+<style>
 
+
+   #navlist li a:hover{
+        background-color: white;
+    }
+    #navlist li a{
+        background-color: white;
+    }
+</style>
 
 <div id="wrapper">
 
@@ -27,9 +37,10 @@
 
 
             <div class="container-fluid">
-                <ul class="nav navbar-left ">
-                    <li><a href="" class="icon-bar" id="menu-toggle"><img src="<?php echo base_url().'assets/images/menu.png';?>"></a></li>
-
+                <ul class="nav row " id="navlist">
+                    <li class="col-sm-4"><a href="" class="icon-bar" id="menu-toggle"><img src="<?php echo base_url().'assets/images/menu.png';?>"></a></li>
+                    <li class="col-sm-1"></li>
+                    <li class="col-sm-4 " ><a href="<?php echo base_url().'welcome/login';?>"><img height="30px" src="<?php echo base_url().'assets/images/logo.png'?>"></a></li>
 
                 </ul>
                 <!---->

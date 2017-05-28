@@ -22,6 +22,17 @@ body {
 }
 
 
+
+
+
+ #navlist li a:hover{
+     background-color: white;
+ }
+#navlist li a{
+    background-color: white;
+}
+
+
 .modal {
     text-align: center;
 }

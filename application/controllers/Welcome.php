@@ -42,7 +42,7 @@ class Welcome extends CI_Controller {
             $this->form_validation->set_rules('password', 'Password', 'required');
             $this->form_validation->set_rules('mobile', 'Mobile', 'required');
             if ($this->form_validation->run() === FALSE) {
-//                $this->load->view('/template/header');
+                $this->load->view('/template/header');
                 $this->load->view('/profile/login', $data);
                 $this->load->view('/template/footer');
             } else {
@@ -85,7 +85,7 @@ class Welcome extends CI_Controller {
         $this->form_validation->set_rules('email','Email','required');
         if($this->form_validation->run()===FALSE)
         {
-//            $this->load->view('/template/header');
+            $this->load->view('/template/header');
             $this->load->view('/profile/signup',$data);
             $this->load->view('/template/footer');
         }
@@ -116,7 +116,7 @@ class Welcome extends CI_Controller {
                 else{
 
 
-//                $this->load->view('/template/header');
+                $this->load->view('/template/header');
                 $this->load->view('/profile/profile',$data);
                 $this->load->view('/template/footer');
                 }

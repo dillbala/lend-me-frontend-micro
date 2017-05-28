@@ -24,8 +24,10 @@ else{
 
 
     ?>
-<div class="container-fluid">
 
+
+<div class="container-fluid col-sm-6 col-sm-offset-2" style="padding-top: 5%">
+<div class="well">
 
 <form>
             <label> Select Amount of Loan</label>
@@ -56,6 +58,7 @@ else{
     </br>
     <button class="btn btn-success" id="apply" type="submit">Apply for Loan</button>
 </form>
+</div>
 </div>
 
 

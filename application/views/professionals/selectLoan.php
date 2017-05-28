@@ -23,13 +23,14 @@ else{
 
 
 ?>
-<div class="container-fluid">
+    <div class="container-fluid col-sm-6 col-sm-offset-2" style="padding-top: 5%">
+    <div class="well">
 
 
     <form>
         <label> Select Amount of Loan</label>
         <br>
-        <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="500" data-slider-max="5000" data-slider-step="500" data-slider-value="1000"/>
+        <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="100" data-slider-max="5000" data-slider-step="100" data-slider-value="1000"/>
         <br>
         </br>
         <label>Loan Amount:</label> <input id="amount" class="btn btn-primary" style="width: 70px" type="text" value="1000">
@@ -37,7 +38,7 @@ else{
         <hr>
         <label> Select number of days </label>
         <br>
-        <input id="ex2" data-slider-id='ex2Slider' type="text" data-slider-min="1" data-slider-max="31" data-slider-step="1" data-slider-value="7"/>
+        <input id="ex2" data-slider-id='ex2Slider' type="text" data-slider-min="7" data-slider-max="31" data-slider-step="1" data-slider-value="7"/>
         <br>
         </br>
         <label>Days:</label> <input id="days" class="btn btn-primary" style="width: 70px" type="text" value="7">
@@ -55,6 +56,7 @@ else{
         </br>
         <button class="btn btn-success" id= "apply" >Apply for Loan</button>
     </form>
+    </div>
 </div>
 
 
