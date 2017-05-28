@@ -13,7 +13,7 @@ class MY_Controller extends CI_Controller {
         {
             if(($this->session->userdata['logged_in'])!=1)
             {
-                redirect('');
+                redirect('welcome/login');
             }
             $length = strlen('/profile');
             $newStr = substr($_SERVER['REQUEST_URI'],0,$length);
@@ -27,7 +27,7 @@ class MY_Controller extends CI_Controller {
             }
         }
         else{
-            redirect('');
+            redirect('welcome/login');
         }
 
 
@@ -45,11 +45,11 @@ class ADMIN_Parent extends CI_Controller {
         {
             if(($this->session->userdata['logged_in'])!=1 && ($this->session->userdata['role'])!=0)
             {
-                redirect('');
+                redirect('welcome/login');
             }
         }
         else{
-            redirect('');
+            redirect('welcome/login');
         }
 
 

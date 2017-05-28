@@ -21,12 +21,8 @@ class Welcome extends CI_Controller {
 	 */
 
 
-    public function index()
+    public function login()
     {
-
-//        print_r($this->session->userdata);
-//        var_dump(isset($this->session->userdata['logged_in']));
-//        die();
 
         if(isset($this->session->userdata['logged_in']) && $this->session->userdata['logged_in']==1)
         {
@@ -176,7 +172,7 @@ class Welcome extends CI_Controller {
             $data['message'] = 'You can not send this request';
         }
 
-        redirect('');
+        redirect('welcome/login');
 
 
     }
@@ -188,6 +184,6 @@ class Welcome extends CI_Controller {
     public function logout() {
 //        $this->session->unset_userdata();
         $this->session->sess_destroy();
-        redirect('/');
+        redirect('welcome/login');
     }
 }

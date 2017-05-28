@@ -20,7 +20,7 @@ echo validation_errors();
                 <div class="row">
                     <div class="col-xs-6">
                         <div class="well">
-                            <?php echo form_open('');?>
+                            <?php echo form_open('welcome/login');?>
                             <?php if(!empty($error)){?>
                                 <div class="alert-danger"><?php echo $error;?></div>
                             <?php }?>
@@ -56,7 +56,7 @@ echo validation_errors();
                             <li><span class="fa fa-check text-success"></span> Salaried employees </li>
                             <li><a href="/home/"><u>Read more</u></a></li>
                         </ul>
-                        <p><a href="welcome/signup/" class="btn btn-info btn-block">Yes please, Signup now!</a></p>
+                        <p><a href="<?php echo base_url().'welcome/signup';?>" class="btn btn-info btn-block">Yes please, Signup now!</a></p>
                     </div>
                 </div>
             </div>

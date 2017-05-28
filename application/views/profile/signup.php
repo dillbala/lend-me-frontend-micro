@@ -17,7 +17,7 @@ echo validation_errors();
             <div class=" modal-title row">
                 <div class="col-xs-4"><h4>Signup</h4> </div>
                 <div class="col-xs-6"><h4></h4></div>
-                <a href="/"> <div class="col-xs-2 btn btn-primary">Login</div></a>
+                <a href="<?php echo base_url().'welcome/login';?>"> <div class="col-xs-2 btn btn-primary">Login</div></a>
             </div>
 <!--            <h4 class="modal-title" id="myModalLabel">Signup </h4>-->
 <!--            <h4 class="modal-title " >Login </h4>-->
