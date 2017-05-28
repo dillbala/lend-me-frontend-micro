@@ -31,6 +31,7 @@ class Professional extends MY_Controller {
 
             $data = array('userData'=>$user_data,'documentData'=>$userDocumentData);
 
+            $this->load->view('/template/admin_header');
             $this->load->view('profile/approve',$data);
 
         }

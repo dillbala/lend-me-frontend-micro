@@ -27,7 +27,7 @@ class Student extends MY_Controller {
             $user_data = $this->service_model->getData('/v1/users/'.$userId)['result']['data'];
             $userDocumentData = $this->service_model->getData('/v1/documents/'.$userId)['result']['data'];
             $data = array('userData'=>$user_data,'documentData'=>$userDocumentData);
-
+            $this->load->view('/template/admin_header');
             $this->load->view('profile/approve',$data);
 
         }

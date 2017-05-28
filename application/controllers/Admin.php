@@ -88,8 +88,6 @@ class Admin extends ADMIN_Parent {
     {
         $loan_requests = $this->service_model->getData('/v1/loans/')['result']['data'];
 
-//        echo "<pre>";print_r($loan_requests);
-//        die();
 
         $this->load->view('/template/admin_header');
         $this->load->view('/admin/pendingLoanRequests',$loan_requests);
@@ -101,7 +99,6 @@ class Admin extends ADMIN_Parent {
     public function approveUser($userId)
     {
         $response= $this->service_model->putData(array('noc'=>'1'),'/v1/users/'.$userId);
-        redirect('admin/');
         if ($response['code']==200)
         {
             echo "200";
