@@ -9,36 +9,132 @@ echo validation_errors();
 
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-<div id="login-overlay" class="modal-dialog center-block">
+<style type="text/css">
+    .modal-dialog{
+        width: 100%;
+    }
+    .modal-content{
+        border:none;
+        box-shadow:none;
+    }
+    .signup-info{
+        padding: 40px 50px;
+    }
+    .lead{
+        font-size: 35px;
+    }
+    .signup-info ul li{
+        font-size: 20px;
+     }
+    .text-success{
+        font-size: 20px;
+    }
+    .btn-success{
+        background: #138808;
+    }
+    .lendwell{
+        min-height: 20px;
+        padding: 19px;
+        margin-bottom: 20px;
+        background-color: #f5f5f5;
+        border: 1px solid #e3e3e3;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    }
+     .lastname{
+        visibility: hidden;
+     }
+     .field-firstname-2{
+        display: none;
+     }
+    @media screen and (max-width: 768px) and (min-width: 320px){
+     .signup-info{
+        display: none;
+     }
+     .lendwell{
+        min-height: 20px;
+        padding: 0px;
+        margin-bottom: 20px;
+        background-color: #fff;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+     }
+     .lastname{
+        visibility: visible;
+     }
+     .container{
+        padding-left: 0px;
+        padding-right: 0px;
+     }
+     .col-sm-6, .col-sm-12{
+        padding-left: 2px;
+        padding-right: 2px;
+     }
+     .field-firstname,.field-lastname{
+        padding-left: 15px;
+        padding-right: 15px;
+     }
+    .navbar{
+        margin-bottom: 0px;
+    }
+    .field-firstname-2{
+        display: block;
+    }
+    .field-firstname-1{
+        display: none;
+    }
+    }
+</style>
+<div id="login-overlay" class="signup-page">
+<div class="col-md-6 col-sm-12 signup-info">
+    <p class="lead">Register now for <span class="text-success"> FREE</span></p>
+    <ul class="list-unstyled" style="line-height: 2">
+    <li><span class="fa fa-check text-success"></span> Instant money</li>
+    <li><span class="fa fa-check text-success"></span> Repay over time</li>
+    <li><span class="fa fa-check text-success"></span> Two minute checkout</li>
+    <li><span class="fa fa-check text-success"></span> College students</li>
+    <li><span class="fa fa-check text-success"></span> Salaried employees </li>
+    <!-- <li><a href="/home/"><u>Read more</u></a></li> -->
+    </ul>
+    <!-- <p><a href="<?php echo base_url().'welcome/signup';?>" class="btn btn-info btn-block">Yes please, Signup now!</a></p> -->
+</div>
+<div class="col-md-6 col-sm-12">
+<div class="modal-dialog center-block">
     <div class="modal-content">
         <div class="modal-header">
 <!--            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>-->
-            <div class=" modal-title row">
-                <div class="col-xs-4"><h4>Signup</h4> </div>
-                <div class="col-xs-6"><h4></h4></div>
-                <a href="<?php echo base_url().'welcome/login';?>"> <div class="col-xs-2 btn btn-primary">Login</div></a>
+            <div class="row modal-title ">
+                <div class="col-xs-9">
+                    <h4 style="color:#138808">Signup</h4>
+                </div>
+                <div class="col-xs-3">
+                    <a href="<?php echo base_url().'welcome/login';?>"> <div class="btn btn-primary">Login</div></a>
+                </div>
             </div>
 <!--            <h4 class="modal-title" id="myModalLabel">Signup </h4>-->
 <!--            <h4 class="modal-title " >Login </h4>-->
         </div>
         <div class="modal-body">
             <div class="row">
-                <div class="col-xs-2"></div>
-                <div class="col-xs-8">
-                    <div class="well">
+                <!-- <div class="col-xs-2"></div> -->
+                <div class="col-xs-12">
+                    <div>
                         <?php echo form_open('welcome/signup');?>
                         <?php if(!empty($error)){?>
                             <div class="alert-danger"><?php echo $error;?></div>
                         <?php }?>
                         <div class="row">
-                            <div class="form-group col-xs-6">
-                                <label for="firstName" class="control-label">First Name</label>
+                            <div class="form-group col-md-6 col-sm-12 field-firstname">
+                                <label for="firstName" class="control-label field-firstname-1">Name</label>
+                                <label for="firstName" class="control-label field-firstname-2">First Name</label>
                                 <input type="text" class="form-control" id="firstName" maxlength="30" name="firstName" value="<?php echo set_value('firstName');?>" required="" title="Please enter you first name" placeholder="First Name">
                                 <span class="help-block"></span>
                             </div>
-                            <div class="form-group col-xs-6">
-                                <label for="lastName" class="control-label">Last Name</label>
+                            <div class="form-group col-md-6 col-sm-12 field-lastname">
+                                <label class="lastname" for="lastName" class="control-label">Last Name</label>
                                 <input type="text" class="form-control" id="lastName" name="lastName" maxlength="30" value="<?php echo set_value('lastName');?>" required="" title="Please enter you last name" placeholder="Last Name">
                                 <span class="help-block"></span>
                             </div>
@@ -85,5 +181,6 @@ echo validation_errors();
         </div>
     </div>
 </div>
-
+</div>
+</div>
 
