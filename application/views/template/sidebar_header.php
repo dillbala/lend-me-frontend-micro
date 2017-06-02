@@ -6,7 +6,7 @@
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<?php echo base_url().'assets/css/bootstrap.min.css';?>">
-
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="<?php echo base_url().'assets/css/navbar-fixed-side.css';?>" rel="stylesheet" />
 <link rel='shortcut icon' type='image/x-icon' href='<?php echo base_url().'assets/images/favicon.ico';?>' />
 <title>LendPaisa | Instant Personal Loan, EazyEMI, Pay Over Time</title>
@@ -19,8 +19,12 @@
 </script>
 
 <style>
-
-
+    .sidebar-nav li {
+        margin-left: -23px;
+    }
+#wrapper.menuDisplayed #sidebar-wrapper {
+    width: 195px;
+}
    #navlist li a:hover{
         background-color: white;
     }
@@ -68,15 +72,12 @@
                     </li>
 
                 </ul>
-                <hr>
-                <li><a href="<?php echo base_url().'apply';?>"> Apply For Loan</a></li>
-                <li><a href="<?php echo base_url().'profile/history';?>"> History </a></li>
-                <li><a href="<?php echo base_url().'profile';?>"> Profile</a></li>
-                <li><a href="#"> Repayment </a></li>
+                <li><a href="<?php echo base_url().'apply';?>"><i class="fa fa-university" aria-hidden="true"></i> Apply For Loan</a></li>
+                <li><a href="<?php echo base_url().'profile/history';?>"><i class="fa fa-history" aria-hidden="true"></i> History </a></li>
+                <li><a href="<?php echo base_url().'profile';?>"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+                <li><a href="#"><i class="fa fa-money" aria-hidden="true"></i> Repayment </a></li>
 <!--                <li><a href="--><?php //echo base_url().'apply';?><!--"> Settings</a></li>-->
-
-                <hr>
-                <li><a  href="<?php echo base_url() . 'welcome/logout' ?>">Logout</a></li>
+                <li><a  href="<?php echo base_url() . 'welcome/logout' ?>"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
             </div>
         </ul>
     </div>
