@@ -72,9 +72,27 @@ height: 210px;
         @media screen and (max-width: 768px) and (min-width: 320px){
            .profile-detail {
              padding-left: 0px;
+             text-align: center;
             }
             .profile-campus{
                 margin-top: 5px;
+            }
+            .profile-detail {
+                margin-top: 10px;
+            }
+            .lower-profile-content {
+                padding: 0px;
+                text-align: center;
+            }
+           
+            .profile-image {
+                margin-left: 0px;
+                text-align: center;
+            }
+            .profile-content img{
+                height:130px;
+                width: 130px;
+                margin: 0 auto;
             }
         }
 </style>
@@ -144,7 +162,7 @@ height: 210px;
         <div class="full-width">
         <div class="row">
               <div class="profile-content">
-                        <div class="profile-image col-xs-5 col-sm-5 col-md-2">
+                        <div class="profile-image col-xs-12 col-sm-5 col-md-3">
 
                             <?php if (!empty($this->session->userdata['profile_pic']))
                                 {
@@ -159,10 +177,10 @@ height: 210px;
                            <img src="<?php echo $file ?>"  alt="" class="img-circle img-responsive">
                         </div>
 
-                        <div class="col-xs-7 col-sm-7 col-md-3 profile-detail">
+                        <div class="col-xs-12 col-sm-7 col-md-3 profile-detail">
                             <h4>
-                                <?php echo $this->session->userdata['firstName']?></h4>
-                            <?php echo $this->session->userdata['lastName'];?>
+                                <?php echo $this->session->userdata['firstName']?> <?php echo $this->session->userdata['lastName'];?></h4>
+                            
                             <br>
                             <small><cite ><?php echo $this->session->userdata['mobile'];?>
                                     </cite></small>
@@ -191,7 +209,7 @@ height: 210px;
                 </div>
                 
             </div>
-            <div class="container">
+            <div class="full-width">
             <div class="lower-profile-content">
                 <p>Hi <?php echo $this->session->userdata['firstName']?> <?php echo $this->session->userdata['lastName'];?>,</p>
                 <p>We are a very young company and we are still calibrating our analysis models, testing behaviors of use and payments of customers with different profiles. We regret the inconvenience caused!</p>
