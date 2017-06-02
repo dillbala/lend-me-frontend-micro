@@ -10,8 +10,42 @@ echo validation_errors();
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <style type="text/css">
+    .form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border-bottom: 1px solid #ccc;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+    }
+    input {
+    border-bottom: 1px solid #ccc;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    }
+    .navbar-default{
+        margin-bottom: 0px;
+    }
     .modal-dialog{
         width: 100%;
+    }
+    .modal-header {
+    padding: 0px;
+    border-bottom: 1px solid #fff;
     }
     .modal-content{
         border:none;
@@ -48,6 +82,9 @@ echo validation_errors();
      .field-firstname-2{
         display: none;
      }
+     .form-control:focus {
+    box-shadow: none;
+    }
     @media screen and (max-width: 768px) and (min-width: 320px){
      .signup-info{
         display: none;
@@ -106,13 +143,13 @@ echo validation_errors();
     <div class="modal-content">
         <div class="modal-header">
 <!--            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>-->
-            <div class="row modal-title ">
-                <div class="col-xs-9">
+            <div class="row modal-title text-center">
+                <div class="col-xs-12">
                     <h4 style="color:#138808">Signup</h4>
                 </div>
-                <div class="col-xs-3">
-                    <a href="<?php echo base_url().'welcome/login';?>"> <div class="btn btn-primary">Login</div></a>
-                </div>
+                <!-- <div class="col-xs-3">
+                     <a href="<?php echo base_url().'welcome/login';?>"> <div class="btn btn-primary">Login</div></a>
+                </div> -->
             </div>
 <!--            <h4 class="modal-title" id="myModalLabel">Signup </h4>-->
 <!--            <h4 class="modal-title " >Login </h4>-->
@@ -128,42 +165,42 @@ echo validation_errors();
                         <?php }?>
                         <div class="row">
                             <div class="form-group col-md-6 col-sm-12 field-firstname">
-                                <label for="firstName" class="control-label field-firstname-1">Name</label>
-                                <label for="firstName" class="control-label field-firstname-2">First Name</label>
+                                <!-- <label for="firstName" class="control-label field-firstname-1">Name</label> -->
+                                <!-- <label for="firstName" class="control-label field-firstname-2">First Name</label> -->
                                 <input type="text" class="form-control" id="firstName" maxlength="30" name="firstName" value="<?php echo set_value('firstName');?>" required="" title="Please enter you first name" placeholder="First Name">
                                 <span class="help-block"></span>
                             </div>
                             <div class="form-group col-md-6 col-sm-12 field-lastname">
-                                <label class="lastname" for="lastName" class="control-label">Last Name</label>
+                                <!-- <label class="lastname" for="lastName" class="control-label">Last Name</label> -->
                                 <input type="text" class="form-control" id="lastName" name="lastName" maxlength="30" value="<?php echo set_value('lastName');?>" required="" title="Please enter you last name" placeholder="Last Name">
                                 <span class="help-block"></span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="mobile" class="control-label">Mobile</label>
-                            <input type="text" pattern="[56789][0-9]{9}" class="form-control" id="mobile" name="mobile"  value="<?php echo set_value('mobile');?>" required="" title="Please enter you mobile" placeholder="">
+                            <!-- <label for="mobile" class="control-label">Mobile</label> -->
+                            <input type="text" pattern="[56789][0-9]{9}" class="form-control" id="mobile" name="mobile"  value="<?php echo set_value('mobile');?>" required="" title="Please enter you mobile" placeholder="Mobile">
                             <span class="help-block"></span>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="control-label">Email</label>
+                            <!-- <label for="email" class="control-label">Email</label> -->
                             <input type="email" class="form-control" id="email" name="email" value="<?php echo set_value('email');?>" required="" title="Please enter you email" placeholder="Email address">
                             <span class="help-block"></span>
                         </div>
                         <div class="form-group">
-                            <label for="password" class="control-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" value=" " required="" title="Please enter your password" placeholder="Password">
+                            <!-- <label for="password" class="control-label">Password</label> -->
+                            <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password" placeholder="Password">
                             <span class="help-block"></span>
                         </div>
 
                         <div class="row">
                         <div class="form-group col-xs-6">
-                            <label for="dob" class="control-label">Date of Birth</label>
+                            <!-- <label for="dob" class="control-label">Date of Birth</label> -->
                             <input type="date" class="form-control" id="dob" name="dob" value="<?php echo set_value('dob');?>" required="" title="Please enter you date of birth" placeholder="Date of Birth">
                             <span class="help-block"></span>
                         </div>
 
                         <div class="form-group col-xs-6">
-                            <label for="role" class="control-label">Profession</label>
+                            <!-- <label for="role" class="control-label">Profession</label> -->
                             <select class="form-control" id ="role" name="role" value="" title="Please choose your profession">
                                 <option value="3">Salaried Employee</option>
                                 <option value="4">Student</option>
@@ -173,7 +210,10 @@ echo validation_errors();
                         </div>
 
                         <button type="submit" class="btn btn-success btn-block">Sign Up</button>
-
+                        <br>
+                        <div class="text-center">
+                            <p>Already have an account? <a href="">Login</a></p>
+                        </div>
                     </div>
                 </div>
 

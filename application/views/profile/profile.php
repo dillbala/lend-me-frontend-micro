@@ -1,5 +1,9 @@
 
 <style type="text/css">
+   body{
+    background: #fff !important;
+   }
+   
     .model-body p{
         font-size: 12px;
     }
@@ -38,8 +42,8 @@ background: #fff;
 height: 210px;
 }
 .profile-content img{
-    height:180px;
-    width: 180px;
+    height:140px;
+    width: 140px;
 }
 .profile-campus{
     background: rgb(155,155,155);
@@ -51,6 +55,9 @@ height: 210px;
 .profile-campus h3{
     padding: 0px;
     margin: 0px;
+    font-size: 16px;
+    color:#fff;
+    font-weight: 700;
 }
 .profile-detail{
     margin-top: 30px;
@@ -60,6 +67,7 @@ height: 210px;
 }
 .lower-profile-content {
     padding: 10px 150px 10px 175px;
+    margin-top: 15px;
 }
 .list-grid{
     background: #fff;
@@ -71,18 +79,18 @@ height: 210px;
 }
         @media screen and (max-width: 768px) and (min-width: 320px){
            .profile-detail {
-             padding-left: 0px;
              text-align: center;
             }
             .profile-campus{
-                margin-top: 5px;
+                margin-top: -20px;
             }
             .profile-detail {
-                margin-top: 10px;
+                margin-top: 0px;
             }
             .lower-profile-content {
                 padding: 0px;
                 text-align: center;
+                margin-top: -20px;
             }
            
             .profile-image {
@@ -94,7 +102,19 @@ height: 210px;
                 width: 130px;
                 margin: 0 auto;
             }
+            ul.list-unstyled.col-md-4 {
+                text-align: left;
+            }
+            #page-content-wrapper{
+                padding: 0px;
+                -webkit-box-shadow: none;
+                -moz-box-shadow:none;
+                box-shadow: none;
+                background: #fff;
+                height: 210px;
+                }
         }
+
 </style>
     <?php
 
@@ -162,7 +182,7 @@ height: 210px;
         <div class="full-width">
         <div class="row">
               <div class="profile-content">
-                        <div class="profile-image col-xs-12 col-sm-5 col-md-3">
+                        <div class="profile-image col-xs-12 col-sm-5 col-md-2">
 
                             <?php if (!empty($this->session->userdata['profile_pic']))
                                 {
@@ -181,38 +201,77 @@ height: 210px;
                             <h4>
                                 <?php echo $this->session->userdata['firstName']?> <?php echo $this->session->userdata['lastName'];?></h4>
                             
-                            <br>
+                            
                             <small><cite ><?php echo $this->session->userdata['mobile'];?>
                                     </cite></small>
                             <p>
                                 <?php echo $this->session->userdata['email']?>
                             </p>
+                            <br>
+
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-5 profile-campus">
+                            <?php if($this->session->userdata['role']==3){?>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <h3><span>&#8377</span>0</h3>
+                                    <h3><span>&#8377</span>5000</h3>
                                     <p>Available balance</p>
                                 </div>
                                 <div class="col-md-4">
-                                    <h3><span>&#8377</span>0</h3>
+                                    <h3><span>&#8377</span>5000</h3>
                                     <p>Credit Limit</p>
                                 </div>
                                 <div class="col-md-4">
                                     <h3><span>&#8377</span>0</h3>
-                                    <p>Cashback</p>
+                                    <p>Barrowed</p>
                                 </div>
                             </div>
+                            <?php } else { ?>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h3><span>&#8377</span>1000</h3>
+                                    <p>Available balance</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h3><span>&#8377</span>1000</h3>
+                                    <p>Credit Limit</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h3><span>&#8377</span>0</h3>
+                                    <p>Barrowed</p>
+                                </div>
+                            </div>
+                            <?php } ?>
                         </div>
                     </div>
 
                 </div>
                 
             </div>
+
             <div class="full-width">
             <div class="lower-profile-content">
                 <p>Hi <?php echo $this->session->userdata['firstName']?> <?php echo $this->session->userdata['lastName'];?>,</p>
                 <p>We are a very young company and we are still calibrating our analysis models, testing behaviors of use and payments of customers with different profiles. We regret the inconvenience caused!</p>
+                <div class="col-md-1"></div>
+                <?php if($this->session->userdata['role']==3){?>
+                <ul class="list-unstyled col-md-4" style="line-height: 2">
+                    <li><span class="fa fa-check text-success"></span> Photo</li>
+                    <li><span class="fa fa-check text-success"></span> Aathar</li>
+                    <li><span class="fa fa-check text-success"></span> PAN card</li>
+                    <li><span class="fa fa-check text-success"></span> Company ID</li>
+                    <li><span class="fa fa-check text-success"></span> 1 month Payslip</li>
+                    <li><span class="fa fa-check text-success"></span> 1 month Bank Statement</li>
+                </ul>
+                <?php } else { ?>
+                <ul class="list-unstyled col-md-4" style="line-height: 2">
+                    <li><span class="fa fa-check text-success"></span> Photo</li>
+                    <li><span class="fa fa-check text-success"></span> Aathar</li>
+                    <li><span class="fa fa-check text-success"></span> College ID</li>
+                    <li><span class="fa fa-check text-success"></span> </li>
+                </ul>
+                <?php } ?>
+                <div class="col-md-4"></div>
                 <div class="list-grid col-md-12">
                     <div class="row">
                         <div class="col-md-4">

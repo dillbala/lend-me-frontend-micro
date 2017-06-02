@@ -31,9 +31,23 @@
     #navlist li a{
         background-color: white;
     }
+    #menu-toggle img{
+            display: none;
+        }
+    @media screen and (max-width: 768px) and (min-width: 320px){
+        #menu-toggle img{
+            display: block;
+        }
+        #wrapper.menuDisplayed #sidebar-wrapper{
+            visibility: hidden;
+        }
+        #sidebar-wrapper{
+            top: 50px;
+        }
+    }
 </style>
 
-<div id="wrapper">
+<div id="wrapper" class="menuDisplayed">
 
 
     <div>
@@ -42,9 +56,9 @@
 
             <div class="container-fluid">
                 <ul class="nav row " id="navlist">
-                    <li class="col-sm-4"><a href="" class="icon-bar" id="menu-toggle"><img src="<?php echo base_url().'assets/images/menu.png';?>"></a></li>
-                    <li class="col-sm-1"></li>
-                    <li class="col-sm-4 " ><a href="<?php echo base_url().'welcome/login';?>"><img height="30px" src="<?php echo base_url().'assets/images/logo.png'?>"></a></li>
+                    <li class="col-sm-5 col-xs-3"><a href="" class="icon-bar" id="menu-toggle"><img src="<?php echo base_url().'assets/images/menu.png';?>"></a></li>
+                    <!-- <li class="col-sm-1"></li> -->
+                    <li class="col-sm-4 col-xs-4" ><a href="<?php echo base_url().'welcome/login';?>"><img class="img-height" src="<?php echo base_url().'assets/images/logo.png'?>"></a></li>
 
                 </ul>
                 <!---->
@@ -59,9 +73,9 @@
 
         </nav>
     </div>
-    <div id="sidebar-wrapper">
+    <div id="sidebar-wrapper" >
         <ul class="sidebar-nav">
-            <div class="container">
+            <div class="sidebar-container">
                 <ul class="sidebar-nav">
 
                     <li>
