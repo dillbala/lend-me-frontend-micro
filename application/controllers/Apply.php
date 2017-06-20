@@ -16,12 +16,23 @@ class Apply extends MY_Controller{
 
         $this->load->view('/template/sidebar_header');
         $user_data = $this->service_model->getData('/v1/loans/?user_id='.$this->session->userdata['userId'])['result']['data'];
-        if($this->session->userdata['profile_status']==0)
+        $profile_status = $this->service_model->getData('/v1/users/'.$this->session->userdata['userId'])['result']['data']['profile_status'];
+        $this->session->set_userdata(array('profile_status'=>$profile_status));
+
+
+//        echo $this->session->userdata['profile_status'];
+
+
+//        in_array($this->session->userdata['profile_status'],array(0,5,6,7));
+
+//        if($this->session->userdata['profile_status']==0)
+        if(in_array($this->session->userdata['profile_status'],array(0,5,6,7)))
         {
 
             if ($this->session->userdata['role']==3)
             {
-                $this->load->view('/professionals/profileAdd');
+                $this->load->view('/professionals/completeProfile',array('status'=>$this->session->userdata['profile_status']));
+//                $this->load->view('/professionals/profileAdd');
             }
             elseif ($this->session->userdata['role']==4)
             {
