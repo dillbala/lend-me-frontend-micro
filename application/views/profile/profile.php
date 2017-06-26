@@ -197,19 +197,153 @@ height: 210px;
                 <p>We are a very young company and we are still calibrating our analysis models, testing behaviors of use and payments of customers with different profiles. We regret the inconvenience caused!</p>
                 <div class="list-grid col-md-12">
                     <div class="row">
-                        <div class="col-md-4">
+
+
+                        <?php 
+
+                            foreach ($loans as $loan) {
+
+
+        ?>
+
+
+
+
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="panel <?php
+
+                switch ($loan['status'])
+                {
+                    case 0:
+                        echo 'panel-warning';
+                        break;
+                    case 2:
+                        echo 'panel-success';
+                        break;
+                    case 3:
+                        echo 'panel-info';
+                        break;
+                    case 4:
+                        echo 'panel-danger';
+                        break;
+                    default:
+                        echo '';
+                        break;
+
+
+
+
+                }
+
+                ?>">
+                    <div class="panel-heading"><?php
+
+                        switch ($loan['status'])
+                        {
+                            case 0:
+                                echo 'Applied';
+                                break;
+                            case 2:
+                                echo 'Disbursed';
+                                break;
+                            case 3:
+                                echo 'Returned';
+                                break;
+                            case 4:
+                                echo 'Rejected';
+                                break;
+                            default:
+                                echo '';
+                                break;
+
+
+
+
+                        }
+
+                        ?></div>
+                    <div class="panel-body">
+                    <div class="col-sm-12">
+                        <span class="pull-left">Reference id</span>
+                        <span class="pull-right"><?php echo $loan['loanId']?></span>
+                    </div>
+                        <div class="col-sm-12">
+                        <span class="pull-left">Borrow date </span>
+                            <span class="pull-right"><?php echo date("d-m-Y", strtotime($loan['borrowingDate']));?></span>
+                        </div>
+                        <div class="col-sm-12">
+                            <span class="pull-left">Amount taken</span>
+                            <span class="pull-right"><?php echo $loan['amountTaken']?></span>
+                        </div>
+                        <div class="col-sm-12">
+                        <span class="pull-left">Amount to be Returned</span>
+                            <span class="pull-right"><?php echo $loan['returningAmount']?></span>
+                        </div>
+                        </div>
+                    <div class="panel-footer"><?php
+
+                        switch ($loan['status'])
+                        {
+                            case 0:
+                                echo ' ';
+                                break;
+                            case 2:
+                                 ?><a href="<?php echo base_url().'profile/payment/'.$loan['loanId'];?>" class="btn btn-primary">Repay</a><?php
+                                break;
+                            case 3:
+                                echo ' ';
+                                break;
+                            case 4:
+                                echo ' ';
+                                break;
+                            default:
+                                echo ' ';
+                                break;
+
+
+
+
+                        }
+
+                        ?>
+
+
+                    </div>
+
+
+
+
+                </div>
+                </div>
+
+
+
+        <?php
+    }
+
+
+                        ?>
+                        <!-- <div class="col-md-4">
                             <img src="http://placehold.it/200X100/#ccc">
                         </div>
                         <div class="col-md-5">
                             <h3>WAITLISTED!</h3>
                             <p><a href="#">More Help</a></p>
-                        </div>
+                        </div> -->
                         <div class="col-md-3">
-                            <a href="#" class="btn btn-success btn-md">Apply</a>
+                            <a href="<?php echo base_url().'apply'?>" class="btn btn-success btn-md">Apply</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <?php 
+
+
+
+            ?>
+
+
+
             </div>
 
 

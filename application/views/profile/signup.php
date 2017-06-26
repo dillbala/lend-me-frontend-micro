@@ -140,6 +140,15 @@ echo validation_errors();
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="role" class="control-label">Gender</label>
+                            <select class="form-control" id ="gender" name="gender" value="" title="Please choose your gender">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="help-block"></span>
+                        </div>
+                        <div class="form-group">
                             <label for="mobile" class="control-label">Mobile</label>
                             <input type="text" pattern="[56789][0-9]{9}" class="form-control" id="mobile" name="mobile"  value="<?php echo set_value('mobile');?>" required="" title="Please enter you mobile" placeholder="">
                             <span class="help-block"></span>
@@ -151,7 +160,7 @@ echo validation_errors();
                         </div>
                         <div class="form-group">
                             <label for="password" class="control-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" value=" " required="" title="Please enter your password" placeholder="Password">
+                            <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password" placeholder="Password">
                             <span class="help-block"></span>
                         </div>
 

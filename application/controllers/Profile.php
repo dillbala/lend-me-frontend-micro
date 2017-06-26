@@ -39,8 +39,12 @@ class Profile extends MY_Controller{
                 {
                     redirect('profile/capture_picture');
                 }
+
+
+                $userdata  =$this->service_model->getData('/v1/loans/?sort=0&size=1&user_id='.$this->session->userdata['userId'])['result']['data'];
+
                 $this->load->view('/template/sidebar_header');
-                $this->load->view('/profile/profile');
+                $this->load->view('/profile/profile',$userdata);
                 $this->load->view('/template/sidebar_footer');
             }
         }

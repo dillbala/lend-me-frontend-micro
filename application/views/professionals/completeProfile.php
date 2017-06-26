@@ -361,6 +361,40 @@
 
 
 
+<div id="addFormProcess" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content col-md-6">
+
+            <div class="modal-body">
+                <strong>Updating data. Please wait !</strong>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<div id="addFormSuccess" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content col-md-6">
+
+            <div class="modal-body">
+                <strong>Data Updated Successfully!</strong>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
     <script src="http://malsup.github.com/jquery.form.js"></script>
 
 
@@ -428,6 +462,8 @@
 
         $( '#employmentFormId' )
             .submit( function( e ) {
+                $("#addFormProcess").modal();
+
                 $.ajax( {
                     url: '/professional/do_upload/',
                     type: 'POST',
@@ -438,7 +474,7 @@
 
                         if (result.trim('\n')==200)
                         {
-                            alert("Successfully saved");
+                            $("#addFormProcess").modal('hide');
                             $("#errorStep1").text('');
                             $(".step2").removeClass('disabled').click();
                         }
@@ -461,6 +497,7 @@
 
         $( '#panFormId' )
             .submit( function( e ) {
+                $("#addFormProcess").modal();
                 $.ajax( {
                     url: '/professional/do_upload/',
                     type: 'POST',
@@ -470,7 +507,7 @@
                     success: function (result) {
                         if (result.trim('\n')==200)
                         {
-                            alert("Successfully saved");
+                            $("#addFormProcess").modal('hide');
                             $("#errorStep2").text('');
                             $(".step3").removeClass('disabled').click();
                         }
@@ -490,6 +527,7 @@
 
         $( '#adharFormId' )
             .submit( function( e ) {
+                $("#addFormProcess").modal();
                 $.ajax( {
                     url: '/professional/do_upload/',
                     type: 'POST',
@@ -499,7 +537,7 @@
                     success: function (result) {
                         if (result.trim('\n')==200)
                         {
-                            alert("Successfully saved");
+                            $("#addFormProcess").modal('hide');
                             $("#errorStep3").text('');
                             $(".step4").removeClass('disabled').click();
                         }
@@ -520,6 +558,7 @@
 
         $( '#bankFormId' )
             .submit( function( e ) {
+                $("#addFormProcess").modal();
                 $.ajax( {
                     url: '/professional/do_upload/',
                     type: 'POST',
@@ -529,7 +568,7 @@
                     success: function (result) {
                         if (result.trim('\n')==200)
                         {
-                            alert("Successfully saved");
+                            $("#addFormProcess").modal('hide');
                             $("#errorStep4").text('');
                             location.reload;
 

@@ -36,7 +36,7 @@ else{
 
 
 
-                <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="col-sm-12 col-lg-12 col-md-12">
                     <div class="panel <?php
 
                     switch ($loan['status'])
