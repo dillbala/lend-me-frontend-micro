@@ -1,4 +1,4 @@
-body {
+﻿body {
 	margin:0;
 	padding:0;
 	background:#ebebeb;
@@ -1171,13 +1171,13 @@ h2 {
     transform: scale(1);
 }
 #cmsmasters_icon_box_59521f3139c2e::before {
-    background-image: url("../images/Без-имени-1.png");
+    background-image: url("../images/coin.png");
 }
 #cmsmasters_icon_box_59521f313a908::before {
-    background-image: url("../images/Без-имени-2.png");
+    background-image: url("../images/card.png");
 }
 #cmsmasters_icon_box_59521f313b4bb::before {
-    background-image: url("../images/Без-имени-3.png");
+    background-image: url("../images/secure.png");
 }
 .cmsmasters_icon_box.cmsmasters_icon_box_top.box_icon_type_image.shortcode_animated {
     text-align: center;
