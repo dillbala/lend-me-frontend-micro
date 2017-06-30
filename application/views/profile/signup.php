@@ -187,7 +187,7 @@ echo validation_errors();
                         </div>
                         <div class="form-group">
                             <!-- <label for="mobile" class="control-label">Mobile</label> -->
-                            <input type="text" pattern="[56789][0-9]{9}" class="form-control" id="mobile" name="mobile"  value="<?php echo set_value('mobile');?>" required="" title="Please enter you mobile" placeholder="">
+                            <input type="text" pattern="[56789][0-9]{9}" class="form-control" id="mobile" name="mobile"  value="<?php echo set_value('mobile');?>" required="" title="Please enter you mobile" placeholder="Mobile Number">
                             <span class="help-block"></span>
                         </div>
                         <div class="form-group">
