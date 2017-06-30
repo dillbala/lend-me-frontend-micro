@@ -27,7 +27,9 @@ echo validation_errors();
         height: 100px;
         transition: all 0.5s;
     }
-
+    .modal-dialog {
+    width: 400px;
+    margin: 30px auto;}
     /*.common-container{
     height: 200px;
     background-color: #138808;

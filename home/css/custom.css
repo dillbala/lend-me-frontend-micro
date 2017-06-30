@@ -1,4 +1,4 @@
-body {
+﻿body {
 	margin:0;
 	padding:0;
 	background:#ebebeb;
@@ -463,8 +463,8 @@ a:focus, a:hover{
     padding: 5px 20px 0px 20px;
 }
 .grid-row{
-	background-color: #fafafa;
-    padding: 40px 20px 40px 20px;
+	/*background-color: #fafafa;
+    padding: 40px 20px 40px 20px;*/
 }
 .grid {
     padding: 5px 0px 0px 0px;
@@ -909,3 +909,311 @@ p.calculation {
 }
 }
 
+
+#cmsmasters_icon_box_59509e0883dc2::before, #cmsmasters_icon_box_5950a2380acd0 .icon_box_heading::before {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    border-radius: 50%;
+    border-width: 0;
+    font-size: 90px;
+    height: 90px;
+    line-height: 90px;
+    width: 90px;
+}
+#cmsmasters_icon_box_5950a2380acd0::before {
+    background-image: url("../images/Без-имени-1.png");
+}
+#cmsmasters_row_5950a2380a9ff .cmsmasters_row_outer_parent {
+    padding-bottom: 70px;
+}
+#cmsmasters_row_5950a2380a9ff .cmsmasters_row_outer_parent {
+    padding-top: 80px;
+}
+#cmsmasters_icon_box_5950a2380acd0.cmsmasters_icon_box_top::before {
+    top: -45px;
+}
+#cmsmasters_icon_box_59509e0883dc2::before {
+    background-image: url("../images/Без-имени-1.png");
+}
+#cmsmasters_icon_box_59509e0883dc2::before, #cmsmasters_icon_box_59509e0883dc2 .icon_box_heading::before {
+    margin-left: -45px;
+}
+#cmsmasters_icon_box_59509e0883dc2::before, #cmsmasters_icon_box_59509e0883dc2 .icon_box_heading::before {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    border-radius: 50%;
+    border-width: 0;
+    font-size: 90px;
+    height: 90px;
+    line-height: 90px;
+    width: 90px;
+}
+.cmsmasters_icon_box.cmsmasters_icon_box_top::before {
+    font-size: 0;
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 35px;
+    transform: scale(0);
+}
+.cmsmasters_icon_box.box_icon_type_image::before, .cmsmasters_icon_box.box_icon_type_number::before {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+}
+.appformsec {
+    background-attachment: fixed;
+    background-color: #3e467b;
+    background-image: url("../images/blue-poly-background.jpg");
+    background-position: center center;
+    background-repeat: repeat;
+    background-size: cover;
+    color: #fff;
+}
+#cmsmasters_heading_5950a2380ce93 {
+    margin-bottom: 10px;
+    margin-top: 60px;
+    text-align: center;
+}
+#cmsmasters_heading_5950a2380d084 {
+    margin-bottom: 100px;
+    margin-top: 0;
+    text-align: center;
+}
+.one_half {
+    width: 46.6%;
+}
+#cmsmasters_heading_5950a2380e033 {
+    margin-bottom: 5px;
+    margin-top: 50px;
+    text-align: left;
+}
+#cmsmasters_heading_5950a2380e212 {
+    margin-bottom: 20px;
+    margin-top: 0;
+    text-align: left;
+}
+#cmsmasters_row_59509e0883903 .cmsmasters_row_outer_parent {
+    padding-bottom: 70px;
+}
+#cmsmasters_row_59509e0883903 .cmsmasters_row_outer_parent {
+    padding-top: 80px;
+}
+.cmsmasters_img.cmsmasters_image_c {
+    text-align: center;
+}
+.outer_parent {
+    padding-bottom: 110px;
+}
+.cmsmasters_text {
+    font-size: 15px;
+    line-height: 25px;
+}
+#cmsmasters_headings .cmsmasters_heading {
+    color: #cddc39;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    text-align: center;
+}
+h2 {
+    margin: 0 auto;
+}
+.cmsmasters_row.cmsmasters_row_bot_triangle::after {
+    bottom: -15px;
+    top: auto;
+}
+.cmsmasters_row.cmsmasters_row_top_triangle::before, .cmsmasters_row.cmsmasters_row_bot_triangle::after {
+    background-color: inherit;
+    bottom: auto;
+    content: "";
+    height: 30px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: -15px;
+    transform: rotate(45deg);
+    width: 30px;
+    z-index: 1;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+#cmsmasters_row_5950b3cf95c67 {
+    background-color: #393d7d;
+}
+.cmsmasters_button {
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 0;
+    cursor: pointer;
+    display: inline-block;
+    padding: 15px 33px;
+    position: relative;
+    background: #cddc39;
+    color: #fff;
+}
+.outer_parent_con {
+    padding: 80px 0;
+}
+#cmsmasters_heading_5950c725e1952 {
+    margin-bottom: 20px;
+    margin-top: 0;
+    text-align: left;
+}
+.cmsmasters_text {
+    margin-top: 20px;
+}
+.rec_ur_mon {
+    background-attachment: fixed;
+    background-image: url("../images/green-poly-background.jpg");
+    background-position: center top;
+    background-repeat: repeat;
+    background-size: cover;
+}
+.cmsmaster_heading {
+	color: #fff;
+}
+.cmsmasters_button.gre {
+    background: #3e467b none repeat scroll 0 0;
+}
+.cmsmasters_button {
+    text-transform: uppercase;
+}
+.rig_choice {
+    background-attachment: fixed;
+    background-image: url("../images/how-it-works-background.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.icon_box_inner .icon_box_heading {
+    color: #fff;
+    margin: 50px 0 20px;
+    text-transform: uppercase;
+}
+.icon_box_text > p {
+    color: #fff;
+}
+.fa.fa-check-circle-o {
+    color: #cddc39;
+    font-size: 40px;
+}
+.outer_parents {
+    padding: 80px 0;
+}
+.appformsec .grid-content-section {
+    color: #fff;
+}
+.mainsec p {
+    color: #878787;
+    font-size: 15px;
+    line-height: 25px;
+}
+.mainsec .icon_box_heading {
+	color: #000;
+}
+.col-sm-4 .cmsmasters_heading {
+    text-align: center;
+    text-transform: uppercase;
+}
+#cmsmasters_icon_box_59521f3139c2e.cmsmasters_icon_box_top::before {
+    top: -45px;
+}
+#cmsmasters_icon_box_59521f313a908.cmsmasters_icon_box_top::before {
+    top: -45px;
+}
+#cmsmasters_icon_box_59521f313b4bb.cmsmasters_icon_box_top::before {
+    top: -45px;
+}
+#cmsmasters_icon_box_59521f3139c2e::before, #cmsmasters_icon_box_59521f3139c2e .icon_box_heading::before {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    border-radius: 50%;
+    border-width: 0;
+    font-size: 90px;
+    height: 90px;
+    line-height: 90px;
+    width: 90px;
+}
+#cmsmasters_icon_box_59521f313a908 .icon_box_heading::before {
+    margin-left: -45px;
+}
+#cmsmasters_icon_box_59521f313a908::before, #cmsmasters_icon_box_59521f313a908 .icon_box_heading::before {
+    border-radius: 50%;
+    border-width: 0;
+    font-size: 90px;
+    height: 90px;
+    line-height: 90px;
+    width: 90px;
+}
+#cmsmasters_icon_box_59521f313b4bb::before, #cmsmasters_icon_box_59521f313b4bb .icon_box_heading::before {
+    margin-left: -45px;
+}
+#cmsmasters_icon_box_59521f313a908::before, #cmsmasters_icon_box_59521f313a908 .icon_box_heading::before {
+    margin-left: -45px;
+}
+#cmsmasters_icon_box_59521f3139c2e::before, #cmsmasters_icon_box_59521f3139c2e .icon_box_heading::before {
+    margin-left: -45px;
+}
+#cmsmasters_icon_box_59521f313b4bb::before, #cmsmasters_icon_box_59521f313b4bb .icon_box_heading::before {
+    border-radius: 50%;
+    border-width: 0;
+    font-size: 90px;
+    height: 90px;
+    line-height: 90px;
+    width: 90px;
+}
+.cmsmasters_icon_box.cmsmasters_icon_box_top.shortcode_animated::before {
+    opacity: 1;
+    transform: scale(1);
+}
+#cmsmasters_icon_box_59521f3139c2e::before {
+    background-image: url("../images/coin.png");
+}
+#cmsmasters_icon_box_59521f313a908::before {
+    background-image: url("../images/card.png");
+}
+#cmsmasters_icon_box_59521f313b4bb::before {
+    background-image: url("../images/secure.png");
+}
+.cmsmasters_icon_box.cmsmasters_icon_box_top.box_icon_type_image.shortcode_animated {
+    text-align: center;
+}
+.sectop {
+    padding-top: 120px;
+}
+.maintop {
+    background-attachment: scroll;
+    background-image: url("../images/home.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.maintop .col-sm-6 {
+    color: #fff;
+}
+.cmsmasters_heading_wrap.cmsmasters_heading_align_left h1 {
+    /*font-family: 'Poppins';*/
+    font-size: 72px;
+    line-height: 84px;
+    font-weight: normal;
+    font-style: normal;
+    color: #ffffff;
+}
+.cmsmasters_heading_wrap.cmsmasters_heading_align_left h4 {
+    color: #e5f44e;
+    /*font-family: "Poppins";*/
+    font-size: 28px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 32px;
+}
+.maintop .container .col-sm-6 {
+    margin: 200px 0;
+}
+.cmsmasters_button.cmsmasters_customizing.cmsmasters_button.gre:hover {
+	color: #fff;
+}

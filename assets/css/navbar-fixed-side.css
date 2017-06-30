@@ -1,15 +1,29 @@
 #sidebar-wrapper{
     z-index:1;
-    position: absolute;
-    width: 0;
+    position: fixed;
+    width: 155px;
     height: 100%;
+    top:70;
     overflow-y: hidden;
-    background: #DCDCDC;
+    background: #fff;
     /*background: #073642;*/
+    -webkit-box-shadow: 1px 0px 1px 0px rgba(203,209,202,1);
+-moz-box-shadow: 1px 0px 1px 0px rgba(203,209,202,1);
+box-shadow: 1px 0px 1px 0px rgba(203,209,202,1);
 
 
 }
-
+.navbar-default {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    webkit-box-shadow: 1px 0px 1px 0px rgba(203,209,202,1);
+    -moz-box-shadow: 1px 0px 1px 0px rgba(203,209,202,1);
+    box-shadow: 1px 0px 1px 0px rgba(203,209,202,1);
+}
+.img-height{
+    height: 50px;
+}
 .image{
 
     padding: 40px;
@@ -33,9 +47,23 @@
 
 }
 
+
 #wrapper.menuDisplayed #page-content-wrapper{
-    padding-left: 250px;
+    padding-left: 195px;
+    margin-top: 70px;
 }
+ @media screen and (max-width: 768px) and (min-width: 320px){
+        #wrapper.menuDisplayed #page-content-wrapper{
+            padding-left: 0px;
+            margin-top: 50px;
+        }
+        .img-height{
+            height: 30px;
+        }
+        a#menu-toggle {
+            margin-top: 3px;
+        }
+    }
 
 .sidebar-nav{
     padding: 0;
