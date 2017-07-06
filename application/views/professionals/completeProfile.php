@@ -644,7 +644,8 @@
                         {
                             
                             $("#errorStep5").text('');
-                            location.reload;
+                            window.location.href = '<?php echo base_url() . "apply/"?>';
+                            // location.reload;
 
                         }
                         else{
