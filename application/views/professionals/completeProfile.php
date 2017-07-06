@@ -202,6 +202,19 @@
                             </span>
                                 </a>
                             </li>
+
+                            <li role="presentation" class="disabled step5">
+                                <a class="step5" href="#step5" data-toggle="tab" aria-controls="step5" role="tab" title="Step 5">
+                            <span class="round-tab" style="font-size: .6em">
+                                Address
+<!--                                <i class="glyphicon glyphicon-ok"></i>-->
+                            </span>
+                                </a>
+                            </li>
+
+
+
+
                         </ul>
                     </div>
 
@@ -350,6 +363,27 @@
                                     </div>
                                 </form>
                             </div>
+                            <div class="tab-pane" role="tabpanel" id="step5">
+                                <form id="addAddressId">
+                                    <div class="form-group col-sm-6 col-sm-offset-3">
+                                    <div class="well">
+                                        <input hidden name="step" value="step5">
+                                        <div id="errorStep5" class="text-danger"></div>
+                                        <div class="text-primary"> <p>Address Details</p></div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><label>Address</label></span>
+                                            <textarea required class="form-control" type="text" name="address" value="<?php echo set_value('address');?>" placeholder="Address" ></textarea>
+                                        </div>
+                                        <br>
+                                        
+                                    </div>
+                                        <ul class="list-inline pull-right">
+<!--                                    <li><button type="button" class="btn btn-default prev-step">Previous</button></li>-->
+                                    <li><button type="submit" class="btn btn-primary next-step" >Save and continue</button></li>
+                                </ul>
+                                    </div>
+                                </form>
+                            </div>
 
                             <div class="clearfix"></div>
                         </div>
@@ -400,7 +434,9 @@
 
 
     <?php
+    // echo $status;
     switch ($status){
+
 
         case 5:
             echo '<script>$(".step1").removeClass(\'disabled\');$(".step2").removeClass(\'disabled\').click();</script>';
@@ -410,6 +446,9 @@
             break;
         case 7:
             echo '<script>$(".step1").removeClass(\'disabled\');$(".step2").removeClass(\'disabled\');$(".step3").removeClass(\'disabled\');$(".step4").removeClass(\'disabled\').click();</script>';
+            break;
+        case 8:
+            echo '<script>$(".step1").removeClass(\'disabled\');$(".step2").removeClass(\'disabled\');$(".step3").removeClass(\'disabled\');$(".step4").removeClass(\'disabled\');$(".step5").removeClass(\'disabled\').click();</script>';    
             break;
 
 
@@ -474,7 +513,7 @@
 
                         if (result.trim('\n')==200)
                         {
-                            $("#addFormProcess").modal('hide');
+                            
                             $("#errorStep1").text('');
                             $(".step2").removeClass('disabled').click();
                         }
@@ -483,6 +522,7 @@
                             result = result.trim("</p>");
                             $("#errorStep1").text(result);
                         }
+                        $("#addFormProcess").modal('hide');
 
 
                     },
@@ -507,13 +547,14 @@
                     success: function (result) {
                         if (result.trim('\n')==200)
                         {
-                            $("#addFormProcess").modal('hide');
+                            
                             $("#errorStep2").text('');
                             $(".step3").removeClass('disabled').click();
                         }
                         else{
                             $("#errorStep2").text(result);
                         }
+                        $("#addFormProcess").modal('hide');
 
 
                     },
@@ -537,7 +578,7 @@
                     success: function (result) {
                         if (result.trim('\n')==200)
                         {
-                            $("#addFormProcess").modal('hide');
+                            
                             $("#errorStep3").text('');
                             $(".step4").removeClass('disabled').click();
                         }
@@ -545,6 +586,7 @@
                             $("#errorStep3").text(result);
                         }
 
+                        $("#addFormProcess").modal('hide');
 
                     },
                     failure: function(result){
@@ -568,14 +610,15 @@
                     success: function (result) {
                         if (result.trim('\n')==200)
                         {
-                            $("#addFormProcess").modal('hide');
+                            
                             $("#errorStep4").text('');
-                            location.reload;
+                            $(".step5").removeClass('disabled').click();
 
                         }
                         else{
                             $("#errorStep4").text(result);
                         }
+                        $("#addFormProcess").modal('hide');
 
 
                     },
@@ -585,6 +628,39 @@
                 } );
                 e.preventDefault();
             } );
+
+
+          $( '#addAddressId' )
+            .submit( function( e ) {
+                $("#addFormProcess").modal();
+                $.ajax( {
+                    url: '/professional/do_upload/',
+                    type: 'POST',
+                    data: new FormData( this ),
+                    processData: false,
+                    contentType: false,
+                    success: function (result) {
+                        if (result.trim('\n')==200)
+                        {
+                            
+                            $("#errorStep5").text('');
+                            location.reload;
+
+                        }
+                        else{
+                            $("#errorStep5").text(result);
+                        }
+                        $("#addFormProcess").modal('hide');
+
+
+                    },
+                    failure: function(result){
+                        alert(result);
+                    }
+                } );
+                e.preventDefault();
+            } );
+      
 
     </script>
 

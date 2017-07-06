@@ -309,6 +309,27 @@ class Professional extends MY_Controller {
                 break;
 
 
+                case "step5":
+                
+                    $profile_data = array(
+                            'address'=>$this->input->post('address')
+                        );
+
+                    $response= $this->service_model->postData($profile_data,'/v1/profiles/');
+
+                    if ($response['code']==200)
+                    {
+                        echo 200;
+                    }
+                    else {
+                        echo $response['result']['message'];
+                    }
+
+                break;
+
+
+
+
 
 
 

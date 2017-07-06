@@ -222,7 +222,7 @@ echo validation_errors();
                         <button type="submit" class="btn btn-success btn-block">Sign Up</button>
                         <br>
                         <div class="text-center">
-                            <p>Already have an account? <a href="">Login</a></p>
+                            <p>Already have an account? <a href="/welcome/login">Login</a></p>
                         </div>
                     </div>
                 </div>

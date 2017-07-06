@@ -111,7 +111,7 @@ function  takePicture() {
         }, function (data) {
             if (data === 'success') {
                 alert("Successfully uploaded");
-                window.location.href = '<?php echo base_url() . "profile/"?>';
+                window.location.href = '<?php echo base_url() . "apply/"?>';
                 return false;
 
             }

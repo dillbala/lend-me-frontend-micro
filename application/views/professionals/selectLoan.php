@@ -61,6 +61,21 @@ else{
 
 
 
+<div id="applyLoanSuccess" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content col-md-6">
+
+            <div class="modal-body">
+                <strong>Applied for loan successfully!</strong>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
 
 
 <script>
@@ -83,10 +98,12 @@ else{
             'ex2':$('#days').val()
         } ).done(function(resultData) {
             resultData = resultData.trim('\n');
-            alert(resultData);
+            // alert(resultData);
             if (resultData=='200')
             {
+                 // $("#applyLoanSuccess").modal();
                alert('applied for loan successfully');
+
                window.location.reload();
 
             }

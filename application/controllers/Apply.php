@@ -14,19 +14,42 @@ class Apply extends MY_Controller{
     {
 
 
+        // echo $this->session->userdata['profile_pic']);
+
+         // if(empty($this->session->userdata['profile_pic']))
+         //        {
+         //            // echo "here";
+
+
+                    
+         //        }    
+
+
+
         $this->load->view('/template/sidebar_header');
         $user_data = $this->service_model->getData('/v1/loans/?user_id='.$this->session->userdata['userId'])['result']['data'];
         $profile_status = $this->service_model->getData('/v1/users/'.$this->session->userdata['userId'])['result']['data']['profile_status'];
         $this->session->set_userdata(array('profile_status'=>$profile_status));
 
+if($this->session->userdata['profile_status']==0)
+       {
+        redirect('profile/capture_picture');
+       }
 
+// echo $this->session->userdata['profile_status'];
+// die();
 //        echo $this->session->userdata['profile_status'];
 
 
 //        in_array($this->session->userdata['profile_status'],array(0,5,6,7));
 
-//        if($this->session->userdata['profile_status']==0)
-        if(in_array($this->session->userdata['profile_status'],array(0,5,6,7)))
+       // if($this->session->userdata['profile_status']==0)
+       // {
+       //  redirect('profile/capture_picture');
+       // }
+
+
+        if(in_array($this->session->userdata['profile_status'],array(0,4,5,6,7,8)))
         {
 
             if ($this->session->userdata['role']==3)
@@ -49,7 +72,7 @@ class Apply extends MY_Controller{
             $this->load->view('/profile/underReview');
 
         }
-        elseif ($this->session->userdata['profile_status']==2)
+        elseif ($this->session->userdata['profile_status']==2 || $this->session->userdata['profile_status']==9 )
         {
 
             if ($this->session->userdata['role']==3)
@@ -72,6 +95,10 @@ class Apply extends MY_Controller{
     public function applyLoan()
     {
 
+if(in_array($this->session->userdata['profile_status'],array(2,9)))
+    {
+
+
         $amount = $this->input->post('ex1');
         $days = $this->input->post('ex2');
 
@@ -85,6 +112,14 @@ class Apply extends MY_Controller{
         else{
             echo $response['result']['message'];
         }
+
+    }
+    else{
+
+            echo 'Your profile is not yet verified';
+
+    }
+
 
     }
 
