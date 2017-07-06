@@ -15,16 +15,16 @@ class MY_Controller extends CI_Controller {
             {
                 redirect('welcome/login');
             }
-            $length = strlen('/profile');
-            $newStr = substr($_SERVER['REQUEST_URI'],0,$length);
-            if($newStr!='/profile')
-            {
-                    if(empty($this->session->userdata['profile_pic']))
-                        {
+            // $length = strlen('/profile');
+            // $newStr = substr($_SERVER['REQUEST_URI'],0,$length);
+            // if($newStr!='/profile')
+            // {
+            //         if(empty($this->session->userdata['profile_pic']))
+            //             {
 
-                        redirect('profile/');
-                    }
-            }
+            //             redirect('profile/');
+            //         }
+            // }
         }
         else{
             redirect('welcome/login');

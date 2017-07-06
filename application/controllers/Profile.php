@@ -35,10 +35,10 @@ class Profile extends MY_Controller{
                 $this->load->view('/profile/profile',$data);
             }
             else{
-                if(empty($this->session->userdata['profile_pic']))
-                {
-                    redirect('profile/capture_picture');
-                }
+                // if(empty($this->session->userdata['profile_pic']))
+                // {
+                //     redirect('profile/capture_picture');
+                // }
 
 
                 $userdata  =$this->service_model->getData('/v1/loans/?sort=0&size=1&user_id='.$this->session->userdata['userId'])['result']['data'];
@@ -73,10 +73,10 @@ class Profile extends MY_Controller{
     public function capture_picture($error=null)
     {
 
-        if(!empty($this->session->userdata['profile_pic']))
-        {
-            redirect('profile');
-        }
+        // if(!empty($this->session->userdata['profile_pic']))
+        // {
+        //     redirect('apply');
+        // }
         $this->load->view('/template/sidebar_header');
         $this->load->view('/profile/picture',$error);
         $this->load->view('/template/sidebar_footer');
