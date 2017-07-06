@@ -104,7 +104,8 @@ else{
                  // $("#applyLoanSuccess").modal();
                alert('applied for loan successfully');
 
-               window.location.reload();
+               window.location.href = '<?php echo base_url() . "apply/"?>';
+               // window.location.reload();
 
             }
             else{
